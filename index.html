@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MARTA Mobility Test</title>
+  </head>
+  <body>
+
+
+    <script type="text/javascript">
+
+    var infoFromMarta = {};
+    var bookings = [];
+    var clientName = "";
+
+    function getTrips(username, password) {
+
+      return new Promise(function(resolve, reject) {
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', "scrape.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onload = function() {
+          if (xhr.readyState == 4 && xhr.status === 200) {
+            resolve(handleMartaData(xhr.responseText));
+          } else {
+            reject(Error('Request failed, status was ' + xhr.statusText));
+          }
+        };
+        xhr.send(null);//"providedUsername=" + username + "&providedPassword=" + password);
+      });
+
+    }
+
+
+    function handleMartaData(xhrResponse){
+      infoFromMarta = JSON.parse(xhrResponse);
+      bookings = infoFromMarta[0].bookings;
+      clientName = infoFromMarta[0].clientName;
+    }
+
+
+      function init() {
+        getTrips().then(
+          function () {
+            showTrips();
+            setMarker();
+          }
+        )
+      }
+
+      function showTrips() {
+        var htmlBuffer = '<div class="bookings-wrapper" style="display:block;position:absolute;background-color:#eee; width:calc(100vw - 40px); min-height:100%; top:0; left:0;padding:20px; font-size: 14px; text-align: center; font-family: sans-serif"><div class="client-info text-align-center"> Hi, <b>' + clientName + '</b>    </div>' + '<br> <h1>Your Upcoming Trips </h1>';
+
+        bookings.forEach(function(booking) {
+          htmlBuffer += '<div class="booking" style="box-shadow: 0 0 6px 4px rgba(200,200,200,0.7); border-radius: 4px; margin: 10px; padding: 0 10px 10px 8px; padding-bottom: 6px; max-width: 310px; background-color:#fff; text-align: center; display:inline-block;"> <div class="date-and-id" id="date-and-id"> <span class="display-date"><h2 style="border:0; margin-bottom: 4px"><b><u>' + booking.displayDate + '</b></u></h2></span><span><b>Booking ID</b>: ' + booking.bookingID + '</span></div><br><div class="progress-wrapper" style="display: none; margin-bottom: 10px; font-size: 12px;"> <div class="labels" style="text-align: left; width: 240px;"> <div class="label left" style="width: 100px; text-align: left; display: inline-block;"> <b>Ready Time</b><br>' + booking.displayReadyTime + ' </div> <div class="label center" style="width: 100px;text-align: left;display: inline-block;transform: translateX(20px);"><b>End Window</b><br>' + booking.displayEndWindow + '</div> </div> <div class="outer" style="text-align: left; width: 240px; background-color: #111; padding: 2px;"> <div class="inner" style="height: 30px; background-color: #595; background: linear-gradient(to right, #595 0%, #ee5 50%,#000 50%, #000 51%, #ee5 51%, #f55 80%);"> <span class="eta label" style="position: relative;display: inline-block;box-sizing: border-box;height: 100%;padding-top: 5px;font-weight: bold;text-align: left;transform: translate(115px, 24px);" aria-hidden="true">⬆</span> </div> </div> <span class="eta-wrapper" style="padding-top: 2px; display: inline-block; background-color: #EEE; width: 242px; border: 1px solid #000; border-top: 2px solid #000; margin-top:12px"><b>ETA</b>: ' + (booking.displayEta || 'No ETA yet') + (booking.delayInMinutesDescription || "") + '</span></div><div class="ready-time-gage"><span class="ready-time"><b>Start Window</b>: ' + booking.displayReadyTime + '</span> <span class="ready-time"><b>End Window</b>: ' + booking.displayEndWindow + '</span>' + '<br><br><div><b>Pick Up</b><Br>' + booking.pickupAddress + '<br><Br><b>Drop Off</b><br>' + booking.dropOffAddress + '</div><br><div class="booking-status"><b>Trip Status</b>: ' + booking.status + '<span class="late-status">' + (booking.statusDescription || ".") + '</span><br><br> </div>' + '</div></div><br>';
+
+        });
+        htmlBuffer += "</div>";
+        document.querySelector('body').innerHTML += htmlBuffer;
+      }
+
+      function setMarker() {
+        var lateMins = bookings[0].delayInMinutes;
+        var markerDistance = ((lateMins * 4) - 5) + "px";
+        document.querySelector(".eta").style.transform = "translate(" + markerDistance + ", 24px)";
+        document.querySelector(".progress-wrapper").style.display = "inline-block";
+        //the last line is just a quick hack to only show this on the first trip.
+        //TODO: create proper templates for each trip category (Future, Past, Active, Cancelled)
+      }
+
+
+      function formatTime(time) {
+        if (time.charAt(0) === " ") {
+          var fixedTime = time.replace(" ", "0");
+          return fixedTime;
+        } else {
+          return time;
+        }
+      }
+
+      function convertFromMiltaryTime(time) {
+        var segments = time.split(":");
+        var hourSegment = segments[0];
+        var minuteSegment = segments[1];
+        var amPm = hourSegment < 12 ? "AM" : "PM";
+        // converting from Military time if needed.
+        var convertedHour = hourSegment % 12;
+        return convertedHour + ":" + minuteSegment + " " + amPm;
+      }
+
+      function convertTimeToMinutes(time) {
+        var timeInMinutes = time.split(":");
+        timeInMinutes = (timeInMinutes[0] * 60) + parseInt(timeInMinutes[1]);
+        return timeInMinutes;
+      }
+
+
+    window.onload = init;
+
+    </script>
+
+  </body>
+</html>
