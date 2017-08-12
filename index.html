@@ -4,16 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>MARTA Mobility Test</title>
-  <style media="screen">
-    span.eta.label::before {
-      height: 30px;
-      border-right: 2px dotted #000;
-      content: "";
-      z-index: 200;
-      transform: translate(6px, -43px);
-      display: inline-table;
-    }
-  </style>
+
 </head>
 
 <body>
@@ -64,7 +55,7 @@
 
     function showTrips() {
       var htmlBuffer =
-        '<div class="bookings-wrapper" style="display: inline-block;padding:20px;font-size: 14px;text-align: center;font-family: sans-serif;"><div class="client-info text-align-center"> Hi, <b>' +
+        '<div class="bookings-wrapper" style="display: inline-block;padding:20px;font-size: 14px;text-align: center;font-family: sans-serif;"><style media="screen" scoped> span.eta.label::before { height: 30px; border-right: 2px dotted #000; content: ""; z-index: 200; transform: translate(6px, -43px); display: inline-table; } </style><div class="client-info text-align-center"> Hi, <b>' +
         clientName + '</b>    </div>' + '<h1>Your Upcoming Trips </h1>';
 
       bookings.forEach(function(booking) {
