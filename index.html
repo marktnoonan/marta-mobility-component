@@ -18,6 +18,9 @@
 
 <body>
 
+<div id="mobility-eta">
+</div>
+
 
   <script type="text/javascript">
     var martaResponse = {};
@@ -61,23 +64,24 @@
 
     function showTrips() {
       var htmlBuffer =
-        '<div class="bookings-wrapper" style="display:block;position:absolute;background-color:#eee; width:calc(100vw - 40px); min-height:100%; top:0; left:0;padding:20px; font-size: 14px; text-align: center; font-family: sans-serif"><div class="client-info text-align-center"> Hi, <b>' +
-        clientName + '</b>    </div>' + '<br> <h1>Your Upcoming Trips </h1>';
+        '<div class="bookings-wrapper" style="display: inline-block;padding:20px;font-size: 14px;text-align: center;font-family: sans-serif;"><div class="client-info text-align-center"> Hi, <b>' +
+        clientName + '</b>    </div>' + '<h1>Your Upcoming Trips </h1>';
 
       bookings.forEach(function(booking) {
         htmlBuffer +=
-          '<div class="booking" style="box-shadow: 0 0 6px 4px rgba(200,200,200,0.7); border-radius: 4px; margin: 10px; padding: 0 10px 10px 8px; padding-bottom: 6px; max-width: 310px; background-color:#fff; text-align: center; display:inline-block;"> <div class="date-and-id" id="date-and-id"> <span class="display-date"><h2 style="border:0; margin-bottom: 4px"><b><u>' +
+          '<div class="booking" style="box-shadow: 0 0 3px 2px rgba(200,200,200,0.7); border-radius: 4px; margin: 10px; padding: 0 10px 10px 8px; padding-bottom: 6px; max-width: 310px; background-color:#fff; text-align: center; display:inline-block;"> <div class="date-and-id" id="date-and-id"> <span class="display-date"><h2 style="border:0; margin-bottom: 4px"><b><u>' +
           booking.displayDate + '</b></u></h2></span><span><b>Booking ID</b>: ' + booking.bookingID +
           '</span></div><br><div class="progress-wrapper" style="display: none;margin-bottom: 10px;font-size: 12px;margin-top: -30px;"> <div class="labels" style="text-align: left;width: 240px;transform: translateY(31px);"> <div class="label left" style="width: auto;text-align: left;display: inline-block;margin-left: 3px;background: rgba(230,230,230,0.6);padding: 0 3px;"> <b>Ready Time</b><br>' +
           booking.displayReadyTime + '</div> <div class="label center" style="width: auto;text-align: left;display: inline-block;transform: translateX(45px);background: rgba(230,230,230,0.6);padding: 0 3px;"><b>End Window</b><br>' + booking.displayEndWindow +
           '</div></div> <div class="outer" style="text-align: left; width: 240px; background-color: #111; padding: 2px;"> <div class="inner" style="height: 30px; background-color: #595; background: linear-gradient(to right, #595 0%, #ee5 50%, rgba(0,0,0,0.3)51%, #ee5 51%, #f55 80%);"> <span class="eta label" style="position: relative;display: inline-block;box-sizing: border-box;height: 100%;padding-top: 5px;text-align: left;transform: translate(115px, 24px);" aria-hidden="true">⬆ETA</span> </div> </div> <span class="eta-wrapper" style="padding-top: 2px; display: inline-block; font-size: 14px; margin-top:18px"><b>ETA</b>: ' +
-          (booking.displayEta || "No ETA yet") + (booking.delayInMinutesDescription || "") + '</span></div><div class="ready-time-gage"><span class="ready-time"><b>Start Window</b>: ' + booking.displayReadyTime +
-          '</span> <span class="ready-time"><b>End Window</b>: ' + booking.displayEndWindow + '</span>' + '<br><br><div><b>Pick Up</b><Br>' + booking.pickupAddress + '<br><Br><b>Drop Off</b><br>' + booking.dropOffAddress +
+          (booking.displayEta || "No ETA yet") + (booking.delayInMinutesDescription || "") + '</span></div><div class="ready-time-gage" style="text-align: left"><div><b>Pick Up</b><Br>' + booking.pickupAddress + '<br><Br><b>Drop Off</b><br>' + booking.dropOffAddress +
           '</div><br><div class="booking-status"><b>Trip Status</b>: ' + booking.status + '<span class="late-status">' + (booking.statusDescription || ".") + '</span><br><br> </div>' + '</div></div><br>';
 
       });
+
+
       htmlBuffer += "</div>";
-      document.querySelector('body').innerHTML += htmlBuffer;
+      document.querySelector('#mobility-eta').innerHTML += htmlBuffer;
     }
 
     function setMarker() {
