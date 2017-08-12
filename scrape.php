@@ -48,10 +48,6 @@ foreach ($bookingIDs as $bookingID) {
     $i++;
 }
 
-if ($html->find('span[class=Cancelled]', 0)->plaintext !== null) {
-    $cancelledTripExists = $html->find('span[class=Cancelled]', 0)->plaintext;
-    array_shift($arrayOfBookings);
-}
 
 $datesAndTimes = $html->find('td[valign=middle]');
 $arrayOfBookings = datesAndTimes($arrayOfBookings, $datesAndTimes);
@@ -69,7 +65,7 @@ $arrayOfBookings = removePastBookings($arrayOfBookings);
 $latLongForFirstPickup = $html->find("input[name=PickUpAddress]", 1);
 $latLongForFirstPickup = getLatLong($latLongForFirstPickup);
 $json = [
-    (object) ['clientName' => strip_tags($customerInfo->plaintext), 'bookings' => $arrayOfBookings, 'Pick Up location data' => $latLongForFirstPickup, 'Pickup Long' => $latLongForFirstPickup, 'updatedAt' => date('g:i A'), "Past trip found" => $pastTripInDom, 'cancelled checker' => $cancelledTripExists === null]
+    (object) ['clientName' => strip_tags($customerInfo->plaintext), 'bookings' => $arrayOfBookings, 'Pick Up location data' => $latLongForFirstPickup, 'Pickup Long' => $latLongForFirstPickup, 'updatedAt' => date('g:i A'), "Past trip found" => $pastTripInDom]
     ];
 header('Content-type:application/json');
 echo json_encode($json);
@@ -239,34 +235,21 @@ function datesAndTimes($arrayOfBookings, $datesAndTimes)
 
 function locations($arrayOfBookings, $locations)
 {
-    global $cancelledTripExists;
-
   /*
   $locations is tricky - the td[width=5] is a spacer and it's only used between
   the labels "Pick-up" and "Drop-off" and the addresses... so it works as a reference point and we can grab the information from the prev_sibling and
   next_sibling. This is daft but it works.
    */
 
-    // this two-part loop is Trouble and includes these continue statements to ignore trip data if a trip is cancelled.
-
-    //TODO: handle cancelled trips better!
     $i = 0;
     foreach ($locations as $location) {
         if($location->prev_sibling()->plaintext === "Pick-up:"){
-            if ($cancelledTripExists !== null){
-                $cancelledTripExists = "halfway there!";
-                continue;
 
-            }
             $arrayOfBookings[$i]["pickupAddress"] = $location->next_sibling()->plaintext;
             $arrayOfBookings[$i]["iteratorLocation"] = $i;
 
         }
         elseif ($location->prev_sibling()->plaintext === "Drop-off: ") {
-            if ($cancelledTripExists === "halfway there!"){
-                $cancelledTripExists = null;
-                continue;
-            }
             $arrayOfBookings[$i]["dropOffAddress"] = $location->next_sibling()->plaintext;
             $i++;
 
@@ -323,9 +306,9 @@ function getStatusDescription($delay){
 function getDelayInMinutesDescription($delay)
 {
   if ($delay > 1) {
-    return ", $delay minutes late.";
+    return ", $delay minutes behind.";
   } elseif ($delay == 1) {
-    return ", $delay minute late.";
+    return ", $delay minute behind.";
   } elseif ($delay < -1) {
     return ", abs($delay) minutes early.";
   } elseif ($delay == -1) {
