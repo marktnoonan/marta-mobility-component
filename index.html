@@ -57,17 +57,18 @@
 
     function showTrips() {
       var htmlBuffer =
-        '<div class="bookings-wrapper" style="display: inline-block;padding:20px;font-size: 14px;text-align: center;font-family: sans-serif;"><style media="screen" scoped> span.eta.label::before { height: 45px; border-right: 2px dotted #000; content: ""; z-index: 200; transform: translate(7px, -59px); display: inline-table; } </style><div class="client-info text-align-center"> Hi, <b>' +
+        '<div class="bookings-wrapper" style="display: inline-block;padding:20px;font-size: 14px;text-align: center;font-family: sans-serif;"><div class="client-info text-align-center"> Hi, <b>' +
         clientName + '</b>    </div>' + '<h1>Your Upcoming Trips </h1>';
 
       bookings.forEach(function(booking) {
         htmlBuffer +=
           '<div class="booking" style="box-shadow: 0 0 3px 2px rgba(200,200,200,0.7); border-radius: 4px; margin: 10px; padding: 0 10px 10px 8px; padding-bottom: 6px; width: 310px; background-color:#fff; text-align: center; display:inline-block;"> <div class="date-and-id" id="date-and-id"> <span class="display-date"><h2 style="border:0; margin-bottom: 4px"><b><u>' +
           booking.displayDate + '</b></u></h2></span><span><b>Booking ID</b>: ' + booking.bookingID +
-          '</span></div><div class="booking-status" style="margin-top: 8px; margin-bottom: 7px;"><span style="font-weight:bold; font-size: 16px;">Trip Status</span><br> ' + booking.status + '<span class="late-status">' + (booking.statusDescription || ".") + '</span></div>' + '<div class="progress-wrapper" style="display: none;margin-bottom: 10px;font-size: 12px;margin-top: -30px;"> <div class="labels" style="text-align: left;width: 240px;transform: translateY(31px);"> <div class="label left" style="width: auto;text-align: left;display: inline-block;margin-left: 3px;background:linear-gradient(160deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 80%);padding: 0 3px;"> <b>Ready Time</b><br>' +
-          booking.displayReadyTime + '</div> <div class="label center" style="width: auto;text-align: left;display: inline-block;transform: translateX(45px);background: linear-gradient(160deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 80%);padding: 0 3px;"><b>End Window</b><br>' + booking.displayEndWindow +
-          '</div></div> <div class="outer" style="text-align: left; width: 240px; background-color: #111; padding: 2px;"> <div class="inner" style="height: 45px; background-color: #595; background: linear-gradient(to right, #595 0%, #ee5 50%, rgba(0,0,0,0.3)51%, #ee5 51%, #f55 80%);"> <span class="eta label" style="position: relative;display: inline-block;box-sizing: border-box;height: 100%;padding-top: 5px;text-align: left;transform: translate(115px, 42px);" aria-hidden="true">▲</span> </div> </div> <span class="eta-wrapper" style="padding-top: 2px; display: inline-block; font-size: 14px; margin-top:12px"><b>ETA</b>: ' +
-          (booking.displayEta || "No ETA yet") + (booking.delayInMinutesDescription || "") + '</span></div><div class="ready-time-gage" style="text-align: left"><div><b>Pick Up</b><Br>' + booking.pickupAddress + '<br><Br><b>Drop Off</b><br>' + booking.dropOffAddress +
+          '</span> <span><b>Ready Time</b>: ' + booking.displayReadyTime +
+          '</span></div><div class="booking-status" style="margin-top: 8px; margin-bottom: 7px;"><span style="font-weight:bold; font-size: 16px;">Trip Status</span><br> ' + booking.status + '<span class="late-status">' + (booking.statusDescription || ".") + '</span></div>' + '<div class="progress-wrapper" style="display: none;margin-bottom: 10px;font-size: 12px; "> <div class="labels" style="color: #fff; padding-top: 3px; text-align: left; background-color:#000"> <div class="label left" style="width: auto;text-align: left;display: inline-block;margin-left: 3px;padding: 0 3px;"> <b>Start Window</b><br>' +
+          booking.displayReadyTime + '</div> <div class="label center" style="width: auto;text-align: left;display: inline-block;transform: translateX(45px);padding: 0 3px;"><b>End Window</b><br>' + booking.displayEndWindow +
+          '</div></div> <div class="outer" style="text-align: left; width: 240px; background-color: #111; padding: 2px;"> <div class="inner" style="height: 15px; background-color: #595; background: linear-gradient(to right, #595 0%, #ee5 50%, #f55 80%);"> <span class="eta label" style="position: relative;display: inline-block;box-sizing: border-box;height: 100%;padding-top: 5px;text-align: left;transform: translate(115px, -6px);" aria-hidden="true">▲ ETA</span> </div> </div> <span class="eta-wrapper" style="padding-top: 2px; display: inline-block; font-size: 14px; margin-top:12px">Bus expected at <b>' +
+          (booking.displayEta || "No ETA yet") + '</b>,<br>' + (booking.delayInMinutesDescription || "") + '</span></div><div class="ready-time-gage" style="text-align: left"><div><b>Pick Up</b><Br>' + booking.pickupAddress + '<br><Br><b>Drop Off</b><br>' + booking.dropOffAddress +
           '</div><br>' + '</div></div><br>';
 
       });
@@ -87,7 +88,7 @@
       } else {
         markerDistance = "234" + "px";
       }
-      document.querySelector(".eta").style.transform = "translate(" + markerDistance + ", 42px)";
+      document.querySelector(".eta").style.transform = "translate(" + markerDistance + ", -6px)";
       document.querySelector(".progress-wrapper").style.display = "inline-block";
       //the last line is just a quick hack to only show this on the first trip.
       //TODO: create proper templates for each trip category (Future, Past, Active, Cancelled)
