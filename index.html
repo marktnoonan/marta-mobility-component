@@ -67,7 +67,7 @@
           '</span> <span><b>Ready Time</b>: ' + booking.displayReadyTime +
           '</span></div><div class="booking-status" style="margin-top: 8px; margin-bottom: 7px;"><span style="font-weight:bold; font-size: 16px;">Trip Status</span><br> ' + booking.status + '<span class="late-status">' + (booking.statusDescription || ".") + '</span></div>' + '<div class="progress-wrapper" style="display: none;margin-bottom: 10px;font-size: 12px; "> <div class="labels" style="color: #fff; padding-top: 3px; text-align: left; background-color:#000"> <div class="label left" style="width: auto;text-align: left;display: inline-block;margin-left: 3px;padding: 0 3px;"> <b>Start Window</b><br>' +
           booking.displayReadyTime + '</div> <div class="label center" style="width: auto;text-align: left;display: inline-block;transform: translateX(45px);padding: 0 3px;"><b>End Window</b><br>' + booking.displayEndWindow +
-          '</div></div> <div class="outer" style="text-align: left; width: 240px; background-color: #111; padding: 2px;"> <div class="inner" style="height: 15px; background-color: #595; background: linear-gradient(to right, #595 0%, #ee5 50%, #f55 80%);"> <span class="eta label" style="position: relative;display: inline-block;box-sizing: border-box;height: 100%;padding-top: 5px;text-align: left;transform: translate(115px, -6px);" aria-hidden="true">▲ ETA</span> </div> </div> <span class="eta-wrapper" style="padding-top: 2px; display: inline-block; font-size: 14px; margin-top:12px">Bus expected at <b>' +
+          '</div></div> <div class="outer" style="text-align: left; width: 240px; background-color: #111; padding: 2px;"> <div class="inner" style="height: 18px; background-color: #595; background: linear-gradient(to right, #595 0%, #ee5 50%, #f55 80%);"> <span class="eta label" style="position: relative;display: inline-block;box-sizing: border-box;height: 100%;padding-top: 5px;text-align: left;transform: translate(115px, -6px);" aria-hidden="true"><img src="assets/martabus.png" style="height: 18px; display: inline; transform: translateY(5px);"/></span> </div> </div> <span class="eta-wrapper" style="padding-top: 2px; display: inline-block; font-size: 14px; margin-top:12px">Bus expected at <b>' +
           (booking.displayEta || "No ETA yet") + '</b>,<br>' + (booking.delayInMinutesDescription || "") + '</span></div><div class="ready-time-gage" style="text-align: left"><div><b>Pick Up</b><Br>' + booking.pickupAddress + '<br><Br><b>Drop Off</b><br>' + booking.dropOffAddress +
           '</div><br>' + '</div></div><br>';
 
@@ -88,7 +88,7 @@
       } else {
         markerDistance = "234" + "px";
       }
-      document.querySelector(".eta").style.transform = "translate(" + markerDistance + ", -6px)";
+      document.querySelector(".eta").style.transform = "translate(" + markerDistance + ", -10px)";
       document.querySelector(".progress-wrapper").style.display = "inline-block";
       //the last line is just a quick hack to only show this on the first trip.
       //TODO: create proper templates for each trip category (Future, Past, Active, Cancelled)
