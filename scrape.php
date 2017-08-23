@@ -198,7 +198,7 @@ function datesAndTimes($arrayOfBookings, $datesAndTimes)
             $tripDate = substr($nugget, 6);
             // we need to replace the hyphens with slashes to get correct results from the strtotime function. If we don't, it returns day of the week based on European format.
             $displayDate = str_replace("-", "/", $tripDate);
-            $displayDate = date("l, M j, Y", strtotime($displayDate));
+            $displayDate = date("l, M j", strtotime($displayDate));
             if ($tripDate === $currentDay){
                 $displayDate = "Today";
             }
@@ -279,6 +279,7 @@ is more than an hour old, remove the trip from the list.
         $booking["math"] = ($bookingEtaInMinutes + 60) < $currentTimeInMinutes;
         $booking["delayInMinutesDescription"] = getDelayInMinutesDescription($booking["delayInMinutes"]);
         $booking["statusDescription"] = getStatusDescription($booking["delayInMinutes"]);
+        $booking["statusColor"] = getStatusColor($booking["delayInMinutes"]);
 
         if ($booking["date"] === $currentDay && (($bookingEtaInMinutes + 60) < $currentTimeInMinutes)) {
 
@@ -290,6 +291,17 @@ is more than an hour old, remove the trip from the list.
 
     }
     return $arrayOfBookings;
+}
+
+
+function getStatusColor($delay){
+  if ($delay > 30) {
+    return "red";
+  } elseif ($delay < 30) {
+    return "yellow";
+  } else {
+    return "green";
+  }
 }
 
 
