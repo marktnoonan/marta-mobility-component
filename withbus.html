@@ -1,445 +1,544 @@
 <!DOCTYPE html>
 <!-- saved from url=(0020)http://itsmarta.com/ -->
-<html class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths wf-soleil-n7-active wf-soleil-n5-active wf-soleil-n4-active wf-active" lang="en" style=""><!--<![endif]--><head id="ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="./MARTA_files/ektron.stylesheet.ashx"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>
-	MARTA
-</title><meta name="description" content="marta"><meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-<link rel="shortcut icon" type="image/x-icon" href="http://itsmarta.com/favicon.ico"><link rel="stylesheet" type="text/css" media="screen" href="./MARTA_files/browser-detection.css">
-<script src="./MARTA_files/analytics.js"></script><script src="./MARTA_files/710289442458238" async=""></script><script async="" src="./MARTA_files/fbevents.js"></script><script src="./MARTA_files/enquire.min.js"></script><script src="./MARTA_files/main.js"></script><script type="text/javascript" src="./MARTA_files/browser-detection.js">
+<html class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths wf-soleil-n7-active wf-soleil-n5-active wf-soleil-n4-active wf-active"
+  lang="en" style="">
+<!--<![endif]-->
 
-</script>
-<link rel="stylesheet" href="./MARTA_files/main.css">
-<script src="./MARTA_files/modernizr-2.8.3.min.js"></script>
-<script src="./MARTA_files/kil2gpl.js"></script>
-<style type="text/css">.tk-soleil{font-family:"soleil",sans-serif;}</style><style type="text/css">@font-face{font-family:tk-soleil-n7;src:url(https://use.typekit.net/af/b294dc/0000000000000000000148f6/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/b294dc/0000000000000000000148f6/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/b294dc/0000000000000000000148f6/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:tk-soleil-n5;src:url(https://use.typekit.net/af/30eca6/0000000000000000000148f2/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("woff2"),url(https://use.typekit.net/af/30eca6/0000000000000000000148f2/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("woff"),url(https://use.typekit.net/af/30eca6/0000000000000000000148f2/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("opentype");font-weight:500;font-style:normal;}@font-face{font-family:tk-soleil-n4;src:url(https://use.typekit.net/af/8b8a61/0000000000000000000148f1/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/8b8a61/0000000000000000000148f1/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/8b8a61/0000000000000000000148f1/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}</style><script>try { Typekit.load({ async: true }); } catch (e) { }</script>
-<!-- Home Page Calendar Picker -->
-<link href="./MARTA_files/CalendarControl.css" rel="stylesheet" type="text/css">
-<style type="text/css">@font-face{font-family:soleil;src:url(https://use.typekit.net/af/b294dc/0000000000000000000148f6/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/b294dc/0000000000000000000148f6/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/b294dc/0000000000000000000148f6/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:soleil;src:url(https://use.typekit.net/af/30eca6/0000000000000000000148f2/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("woff2"),url(https://use.typekit.net/af/30eca6/0000000000000000000148f2/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("woff"),url(https://use.typekit.net/af/30eca6/0000000000000000000148f2/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("opentype");font-weight:500;font-style:normal;}@font-face{font-family:soleil;src:url(https://use.typekit.net/af/8b8a61/0000000000000000000148f1/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/8b8a61/0000000000000000000148f1/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/8b8a61/0000000000000000000148f1/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}</style><script src="./MARTA_files/CalendarControl1.js" type="text/javascript"></script></head><body style=""><iframe id="CalendarControlIFrame" src="javascript:false;" frameborder="0" scrolling="no" src="./MARTA_files/saved_resource.html"></iframe><div id="CalendarControl"></div>
+<head id="ctl00_Head1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="./MARTA_files/ektron.stylesheet.ashx">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>
+		MARTA
+	</title>
+	<meta name="description" content="marta">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" type="image/x-icon" href="http://itsmarta.com/favicon.ico">
+	<link rel="stylesheet" type="text/css" media="screen" href="./MARTA_files/browser-detection.css">
+	<script src="./MARTA_files/analytics.js"></script>
+	<script src="./MARTA_files/710289442458238" async=""></script>
+	<script async="" src="./MARTA_files/fbevents.js"></script>
+	<script src="./MARTA_files/enquire.min.js"></script>
+	<script src="./MARTA_files/main.js"></script>
+	<script type="text/javascript" src="./MARTA_files/browser-detection.js">
+	</script>
+	<link rel="stylesheet" href="./MARTA_files/main.css">
+	<script src="./MARTA_files/modernizr-2.8.3.min.js"></script>
+	<script src="./MARTA_files/kil2gpl.js"></script>
+	<style type="text/css">
+		.tk-soleil {
+			font-family: "soleil", sans-serif;
+		}
+	</style>
+	<style type="text/css">
+		@font-face {
+			font-family: tk-soleil-n7;
+			src: url(https://use.typekit.net/af/b294dc/0000000000000000000148f6/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff2"), url(https://use.typekit.net/af/b294dc/0000000000000000000148f6/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff"), url(https://use.typekit.net/af/b294dc/0000000000000000000148f6/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("opentype");
+			font-weight: 700;
+			font-style: normal;
+		}
 
-<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '710289442458238');
-fbq('track', 'PageView');
-</script>
-<noscript>&lt;img height="1" width="1" style="display:none"
+		@font-face {
+			font-family: tk-soleil-n5;
+			src: url(https://use.typekit.net/af/30eca6/0000000000000000000148f2/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("woff2"), url(https://use.typekit.net/af/30eca6/0000000000000000000148f2/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("woff"), url(https://use.typekit.net/af/30eca6/0000000000000000000148f2/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("opentype");
+			font-weight: 500;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: tk-soleil-n4;
+			src: url(https://use.typekit.net/af/8b8a61/0000000000000000000148f1/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff2"), url(https://use.typekit.net/af/8b8a61/0000000000000000000148f1/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff"), url(https://use.typekit.net/af/8b8a61/0000000000000000000148f1/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("opentype");
+			font-weight: 400;
+			font-style: normal;
+		}
+	</style>
+	<script>
+		try {
+			Typekit.load({
+				async: true
+			});
+		} catch (e) {}
+	</script>
+	<!-- Home Page Calendar Picker -->
+	<link href="./MARTA_files/CalendarControl.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		@font-face {
+			font-family: soleil;
+			src: url(https://use.typekit.net/af/b294dc/0000000000000000000148f6/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff2"), url(https://use.typekit.net/af/b294dc/0000000000000000000148f6/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff"), url(https://use.typekit.net/af/b294dc/0000000000000000000148f6/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("opentype");
+			font-weight: 700;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: soleil;
+			src: url(https://use.typekit.net/af/30eca6/0000000000000000000148f2/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("woff2"), url(https://use.typekit.net/af/30eca6/0000000000000000000148f2/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("woff"), url(https://use.typekit.net/af/30eca6/0000000000000000000148f2/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3) format("opentype");
+			font-weight: 500;
+			font-style: normal;
+		}
+
+		@font-face {
+			font-family: soleil;
+			src: url(https://use.typekit.net/af/8b8a61/0000000000000000000148f1/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff2"), url(https://use.typekit.net/af/8b8a61/0000000000000000000148f1/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff"), url(https://use.typekit.net/af/8b8a61/0000000000000000000148f1/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("opentype");
+			font-weight: 400;
+			font-style: normal;
+		}
+	</style>
+	<script src="./MARTA_files/CalendarControl1.js" type="text/javascript"></script>
+</head>
+
+<body style=""><iframe id="CalendarControlIFrame" src="javascript:false;" frameborder="0" scrolling="no" src="./MARTA_files/saved_resource.html"></iframe>
+	<div id="CalendarControl"></div>
+
+	<!-- Facebook Pixel Code -->
+	<script>
+		! function(f, b, e, v, n, t, s) {
+			if (f.fbq) return;
+			n = f.fbq = function() {
+				n.callMethod ?
+					n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+			};
+			if (!f._fbq) f._fbq = n;
+			n.push = n;
+			n.loaded = !0;
+			n.version = '2.0';
+			n.queue = [];
+			t = b.createElement(e);
+			t.async = !0;
+			t.src = v;
+			s = b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t, s)
+		}(window,
+			document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '710289442458238');
+		fbq('track', 'PageView');
+	</script>
+	<noscript>&lt;img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=710289442458238&amp;ev=PageView&amp;noscript=1"
 /&gt;</noscript>
-<!-- DO NOT MODIFY -->
-<!-- End Facebook Pixel Code -->
+	<!-- DO NOT MODIFY -->
+	<!-- End Facebook Pixel Code -->
 
 
 
-<form method="post" action="http://itsmarta.com/" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
-<div class="aspNetHidden">
-<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
-<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
-<input type="hidden" name="EktronClientManager" id="EktronClientManager" value="-1759591071">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNzI0MDQxNDg2D2QWAmYPZBYCAgMQZGQWAgILDxYCHglpbm5lcmh0bWwFoQ08ZGl2IGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19faXRlbXMnPg0KICAgICAgICAgICAgICAgIDxkaXYgdGFiaW5kZXg9JzAnIGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19faXRlbSc+DQogICAgICAgICAgICAgICAgICA8YSB0YWJpbmRleD0nLTEnIGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19fdHJpZ2dlcicgaHJlZj0nc2VydmljZS11cGRhdGVzLmFzcHgnPjxzcGFuIGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19fdHJpZ2dlci1sYWJlbCBtaW5pLXNlcnZpY2UtdXBkYXRlc19fdHJpZ2dlci1sYWJlbC0tYnVzJz5CdXMgQWxlcnRzPC9zcGFuPjwvYT48ZGl2IGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19fY29udGVudCc+DQogICAgICAgICAgICAgICAgICAgIDx1bCBjbGFzcz0nbWluaS1zZXJ2aWNlLXVwZGF0ZXNfX2FsZXJ0cyc+IDxsaSBjbGFzcz0nbWluaS1zZXJ2aWNlLXVwZGF0ZXNfX2FsZXJ0Jz4NCiAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9J21pbmktc2VydmljZS11cGRhdGVzX19hbGVydC1uYW1lJz5ObyBzZXJ2aWNlIGFkdmlzb3JpZXMgYXQgdGhpcyB0aW1lPC9kaXY+DQogICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19fYWxlcnQtZGVzY3JpcHRpb24nPjwvZGl2Pg0KICAgICAgICAgICAgICAgICAgICAgIDwvbGk+DQogICAgICAgICAgICAgICAgICAgIDwvdWw+DQogICAgICAgICAgICAgICAgICAgIDxhIGhyZWY9J3NlcnZpY2UtdXBkYXRlcy5hc3B4JyB0YWJpbmRleD0nMCc+U2VlIGFsbCBzZXJ2aWNlIGFsZXJ0czwvYT4NCiAgICAgICAgICAgICAgICAgIDwvZGl2Pg0KICAgICAgICAgICAgICAgIDwvZGl2PjxkaXYgdGFiaW5kZXg9JzAnIGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19faXRlbSc+DQogICAgICAgICAgICAgICAgICA8YSB0YWJpbmRleD0nLTEnIGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19fdHJpZ2dlcicgaHJlZj0nc2VydmljZS11cGRhdGVzLmFzcHgnPjxzcGFuIGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19fdHJpZ2dlci1sYWJlbCBtaW5pLXNlcnZpY2UtdXBkYXRlc19fdHJpZ2dlci1sYWJlbC0tdHJhaW4nPlRyYWluIEFsZXJ0czwvc3Bhbj48L2E+PGRpdiBjbGFzcz0nbWluaS1zZXJ2aWNlLXVwZGF0ZXNfX2NvbnRlbnQnPg0KICAgICAgICAgICAgICAgICAgICA8dWwgY2xhc3M9J21pbmktc2VydmljZS11cGRhdGVzX19hbGVydHMnPiA8bGkgY2xhc3M9J21pbmktc2VydmljZS11cGRhdGVzX19hbGVydCc+DQogICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19fYWxlcnQtZGVzY3JpcHRpb24nPk5vIHNlcnZpY2UgYWR2aXNvcmllcyBhdCB0aGlzIHRpbWU8L2Rpdj4NCiAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9J21pbmktc2VydmljZS11cGRhdGVzX19hbGVydC1kZXNjcmlwdGlvbic+PC9kaXY+DQogICAgICAgICAgICAgICAgICAgICAgPC9saT4NCiAgICAgICAgICAgICAgICAgICAgPC91bD4NCiAgICAgICAgICAgICAgICAgICAgPGEgaHJlZj0nc2VydmljZS11cGRhdGVzLmFzcHgnIHRhYmluZGV4PScwJyA+U2VlIGFsbCBzZXJ2aWNlIGFsZXJ0czwvYT4NCiAgICAgICAgICAgICAgICAgIDwvZGl2Pg0KICAgICAgICAgICAgICAgIDwvZGl2PjwvZGl2PmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFDWN0bDAwJEJ1dHRvbjEc8jnf3swuUSViQXTH1YHtJ+I/1vV0yR9HufUbXWiJNQ==">
-</div>
+	<form method="post" action="http://itsmarta.com/" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+		<div class="aspNetHidden">
+			<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+			<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+			<input type="hidden" name="EktronClientManager" id="EktronClientManager" value="-1759591071">
+			<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNzI0MDQxNDg2D2QWAmYPZBYCAgMQZGQWAgILDxYCHglpbm5lcmh0bWwFoQ08ZGl2IGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19faXRlbXMnPg0KICAgICAgICAgICAgICAgIDxkaXYgdGFiaW5kZXg9JzAnIGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19faXRlbSc+DQogICAgICAgICAgICAgICAgICA8YSB0YWJpbmRleD0nLTEnIGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19fdHJpZ2dlcicgaHJlZj0nc2VydmljZS11cGRhdGVzLmFzcHgnPjxzcGFuIGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19fdHJpZ2dlci1sYWJlbCBtaW5pLXNlcnZpY2UtdXBkYXRlc19fdHJpZ2dlci1sYWJlbC0tYnVzJz5CdXMgQWxlcnRzPC9zcGFuPjwvYT48ZGl2IGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19fY29udGVudCc+DQogICAgICAgICAgICAgICAgICAgIDx1bCBjbGFzcz0nbWluaS1zZXJ2aWNlLXVwZGF0ZXNfX2FsZXJ0cyc+IDxsaSBjbGFzcz0nbWluaS1zZXJ2aWNlLXVwZGF0ZXNfX2FsZXJ0Jz4NCiAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9J21pbmktc2VydmljZS11cGRhdGVzX19hbGVydC1uYW1lJz5ObyBzZXJ2aWNlIGFkdmlzb3JpZXMgYXQgdGhpcyB0aW1lPC9kaXY+DQogICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19fYWxlcnQtZGVzY3JpcHRpb24nPjwvZGl2Pg0KICAgICAgICAgICAgICAgICAgICAgIDwvbGk+DQogICAgICAgICAgICAgICAgICAgIDwvdWw+DQogICAgICAgICAgICAgICAgICAgIDxhIGhyZWY9J3NlcnZpY2UtdXBkYXRlcy5hc3B4JyB0YWJpbmRleD0nMCc+U2VlIGFsbCBzZXJ2aWNlIGFsZXJ0czwvYT4NCiAgICAgICAgICAgICAgICAgIDwvZGl2Pg0KICAgICAgICAgICAgICAgIDwvZGl2PjxkaXYgdGFiaW5kZXg9JzAnIGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19faXRlbSc+DQogICAgICAgICAgICAgICAgICA8YSB0YWJpbmRleD0nLTEnIGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19fdHJpZ2dlcicgaHJlZj0nc2VydmljZS11cGRhdGVzLmFzcHgnPjxzcGFuIGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19fdHJpZ2dlci1sYWJlbCBtaW5pLXNlcnZpY2UtdXBkYXRlc19fdHJpZ2dlci1sYWJlbC0tdHJhaW4nPlRyYWluIEFsZXJ0czwvc3Bhbj48L2E+PGRpdiBjbGFzcz0nbWluaS1zZXJ2aWNlLXVwZGF0ZXNfX2NvbnRlbnQnPg0KICAgICAgICAgICAgICAgICAgICA8dWwgY2xhc3M9J21pbmktc2VydmljZS11cGRhdGVzX19hbGVydHMnPiA8bGkgY2xhc3M9J21pbmktc2VydmljZS11cGRhdGVzX19hbGVydCc+DQogICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSdtaW5pLXNlcnZpY2UtdXBkYXRlc19fYWxlcnQtZGVzY3JpcHRpb24nPk5vIHNlcnZpY2UgYWR2aXNvcmllcyBhdCB0aGlzIHRpbWU8L2Rpdj4NCiAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9J21pbmktc2VydmljZS11cGRhdGVzX19hbGVydC1kZXNjcmlwdGlvbic+PC9kaXY+DQogICAgICAgICAgICAgICAgICAgICAgPC9saT4NCiAgICAgICAgICAgICAgICAgICAgPC91bD4NCiAgICAgICAgICAgICAgICAgICAgPGEgaHJlZj0nc2VydmljZS11cGRhdGVzLmFzcHgnIHRhYmluZGV4PScwJyA+U2VlIGFsbCBzZXJ2aWNlIGFsZXJ0czwvYT4NCiAgICAgICAgICAgICAgICAgIDwvZGl2Pg0KICAgICAgICAgICAgICAgIDwvZGl2PjwvZGl2PmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFDWN0bDAwJEJ1dHRvbjEc8jnf3swuUSViQXTH1YHtJ+I/1vV0yR9HufUbXWiJNQ==">
+		</div>
 
-<script type="text/javascript">
-//<![CDATA[
-var theForm = document.forms['aspnetForm'];
-if (!theForm) {
-    theForm = document.aspnetForm;
-}
-function __doPostBack(eventTarget, eventArgument) {
-    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-        theForm.__EVENTTARGET.value = eventTarget;
-        theForm.__EVENTARGUMENT.value = eventArgument;
-        theForm.submit();
-    }
-}
-//]]>
-</script>
+		<script type="text/javascript">
+			//<![CDATA[
+			var theForm = document.forms['aspnetForm'];
+			if (!theForm) {
+				theForm = document.aspnetForm;
+			}
 
-
-<script src="./MARTA_files/WebResource.axd" type="text/javascript"></script>
+			function __doPostBack(eventTarget, eventArgument) {
+				if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+					theForm.__EVENTTARGET.value = eventTarget;
+					theForm.__EVENTARGUMENT.value = eventArgument;
+					theForm.submit();
+				}
+			}
+			//]]>
+		</script>
 
 
-<script src="./MARTA_files/ScriptResource.axd" type="text/javascript"></script>
-<script src="./MARTA_files/ScriptResource(1).axd" type="text/javascript"></script>
-<script src="./MARTA_files/ScriptResource(2).axd" type="text/javascript"></script>
-<script type="text/javascript">
-//<![CDATA[
-function WebForm_OnSubmit() {
-if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
-return true;
-}
-//]]>
-</script>
+		<script src="./MARTA_files/WebResource.axd" type="text/javascript"></script>
 
-<div class="aspNetHidden">
 
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334">
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAARfZ5vic3pulzLjbT3qOi70U7uouiInfnrxZOBMWZZMm59UXI7RwI+ukRHnd+AlDZ6MO7fmjkJSfq6Zbgk2kTWn/1Oud3xG5E3XCfweGJleTo8Jco9MYYtcgSMPajhw4po=">
-</div>
+		<script src="./MARTA_files/ScriptResource.axd" type="text/javascript"></script>
+		<script src="./MARTA_files/ScriptResource(1).axd" type="text/javascript"></script>
+		<script src="./MARTA_files/ScriptResource(2).axd" type="text/javascript"></script>
+		<script type="text/javascript">
+			//<![CDATA[
+			function WebForm_OnSubmit() {
+				if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+				return true;
+			}
+			//]]>
+		</script>
 
-  <header class="site-header">
-    <!--Service interuptor for temporary outage -->
-    <div id="ctl00_ContentBlock1">
+		<div class="aspNetHidden">
 
-</div>
-    <!--Service interuptor for major outage -->
-    <div id="ctl00_ContentBlock3">
+			<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334">
+			<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAARfZ5vic3pulzLjbT3qOi70U7uouiInfnrxZOBMWZZMm59UXI7RwI+ukRHnd+AlDZ6MO7fmjkJSfq6Zbgk2kTWn/1Oud3xG5E3XCfweGJleTo8Jco9MYYtcgSMPajhw4po=">
+		</div>
 
-</div>
-    <div class="container">
-      <div class="site-header__primary">
-        <div class="row">
-          <div class="col-xs-12 col-md-4 col-lg-3">
-            <div class="brand">
-              <h1><a class="brand__link" href="http://itsmarta.com/Default.aspx" tabindex="0">MARTA</a></h1>
-            </div>
-            <a class="main-nav__trigger js-main-nav__trigger" href="http://itsmarta.com/#">Menu</a> </div>
-          <div class="col-xs-12 col-md-8 col-lg-9">
-            <div class="main-nav js-main-nav">
-              <ul class="main-nav__nav">
-                <li class="main-nav__level1"> <a tabindex="0" href="http://itsmarta.com/planatrip.aspx">Plan a Trip</a> </li>
-                <li class="main-nav__level1" tabindex="0">
-                  <div class="main-nav__dropdown-trigger"><span class="main-nav__label-with-arrow">Get to Know MARTA</span> </div>
-                  <div class="main-nav__dropdown" style="display: none;">
-                    <div class="row">
-                      <div class="col-xs-12 col-sm-3">
-                        <div class="main-nav__dropdown-highlight">
-                          <div class="main-nav__schedule">
-                            <div class="main-nav__schedule-heading">Train Hours</div>
-                            <ul class="main-nav__schedule-list">
-                              <li>Weekday: 4:45 AM - 1 AM</li>
-                              <li>Weekend: 6 AM - 1 AM</li>
-                            </ul>
-                          </div>
-                          <div class="main-nav__schedule">
-                            <div class="main-nav__schedule-heading">Train Frequency</div>
-                            <ul class="main-nav__schedule-list">
-                              <li>Rush Hours: 10 min<br>
-                                <i>(6-9AM &amp; 3-7PM)</i></li>
-                              <li>Non-Rush Hour: 15 min</li>
-                              <li>Nights &amp; Weekends: 20 min</li>
-                            </ul>
-                          </div>
-                          <div class="main-nav__schedule">
-                            <div class="main-nav__schedule-heading">Bus Hours</div>
-                            <ul class="main-nav__schedule-list">
-                              <li>Weekday: 5 AM - 1 AM</li>
-                              <li>Weekend: 5 AM - 12:30 AM</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-3">
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">System Information</div>
-                          <ul class="main-nav__category-list">
-                            <li> <a tabindex="0" href="http://itsmarta.com/train-stations-and-schedules.aspx" target="_self">Train Stations &amp; Schedules</a> </li>
-                              <li> <a tabindex="0" href="http://itsmarta.com/railline-schedules.aspx" target="_self">Train Lines &amp; Schedules</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/bus-schedules.aspx" target="_self">Bus Routes &amp; Schedules</a> </li>
-                            <li> <a tabindex="0" title="Accessible Services" href="http://itsmarta.com/marta-mobility.aspx" target="_self">Accessible Services</a> <br>
-                            </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/holiday-operating-schedule.aspx" target="_self">Holiday Operating Schedule</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/regional-connections.aspx" target="_self">Regional Connections/Maps</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/singletracking.aspx" target="_self">Service Updates - Single tracking</a> </li>
-<li> <a tabindex="0" href="http://www.martaalerts.com/Logon.aspx" target="_blank">Sign-up for MARTA Alerts</a> </li>
-<li> <a tabindex="0" href="http://itsmarta.com/elevator-and-escalators.aspx" target="_self">Elevator &amp; Escalator Updates</a> </li>
- <li> <a tabindex="0" href="http://itsmarta.com/getting-to-airport.aspx" target="_self">Getting to &amp; from the Airport</a> </li>
+		<header class="site-header">
+			<!--Service interuptor for temporary outage -->
+			<div id="ctl00_ContentBlock1">
 
-                          </ul>
-                        </div>
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">Why MARTA?</div>
-                          <ul class="main-nav__category-list">
-                            <!--<li>
+			</div>
+			<!--Service interuptor for major outage -->
+			<div id="ctl00_ContentBlock3">
+
+			</div>
+			<div class="container">
+				<div class="site-header__primary">
+					<div class="row">
+						<div class="col-xs-12 col-md-4 col-lg-3">
+							<div class="brand">
+								<h1><a class="brand__link" href="http://itsmarta.com/Default.aspx" tabindex="0">MARTA</a></h1>
+							</div>
+							<a class="main-nav__trigger js-main-nav__trigger" href="http://itsmarta.com/#">Menu</a> </div>
+						<div class="col-xs-12 col-md-8 col-lg-9">
+							<div class="main-nav js-main-nav">
+								<ul class="main-nav__nav">
+									<li class="main-nav__level1"> <a tabindex="0" href="http://itsmarta.com/planatrip.aspx">Plan a Trip</a> </li>
+									<li class="main-nav__level1" tabindex="0">
+										<div class="main-nav__dropdown-trigger"><span class="main-nav__label-with-arrow">Get to Know MARTA</span> </div>
+										<div class="main-nav__dropdown" style="display: none;">
+											<div class="row">
+												<div class="col-xs-12 col-sm-3">
+													<div class="main-nav__dropdown-highlight">
+														<div class="main-nav__schedule">
+															<div class="main-nav__schedule-heading">Train Hours</div>
+															<ul class="main-nav__schedule-list">
+																<li>Weekday: 4:45 AM - 1 AM</li>
+																<li>Weekend: 6 AM - 1 AM</li>
+															</ul>
+														</div>
+														<div class="main-nav__schedule">
+															<div class="main-nav__schedule-heading">Train Frequency</div>
+															<ul class="main-nav__schedule-list">
+																<li>Rush Hours: 10 min<br>
+																	<i>(6-9AM &amp; 3-7PM)</i></li>
+																<li>Non-Rush Hour: 15 min</li>
+																<li>Nights &amp; Weekends: 20 min</li>
+															</ul>
+														</div>
+														<div class="main-nav__schedule">
+															<div class="main-nav__schedule-heading">Bus Hours</div>
+															<ul class="main-nav__schedule-list">
+																<li>Weekday: 5 AM - 1 AM</li>
+																<li>Weekend: 5 AM - 12:30 AM</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-3">
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">System Information</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" href="http://itsmarta.com/train-stations-and-schedules.aspx" target="_self">Train Stations &amp; Schedules</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/railline-schedules.aspx" target="_self">Train Lines &amp; Schedules</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/bus-schedules.aspx" target="_self">Bus Routes &amp; Schedules</a> </li>
+															<li> <a tabindex="0" title="Accessible Services" href="http://itsmarta.com/marta-mobility.aspx" target="_self">Accessible Services</a> <br>
+															</li>
+															<li> <a tabindex="0" href="http://itsmarta.com/holiday-operating-schedule.aspx" target="_self">Holiday Operating Schedule</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/regional-connections.aspx" target="_self">Regional Connections/Maps</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/singletracking.aspx" target="_self">Service Updates - Single tracking</a> </li>
+															<li> <a tabindex="0" href="http://www.martaalerts.com/Logon.aspx" target="_blank">Sign-up for MARTA Alerts</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/elevator-and-escalators.aspx" target="_self">Elevator &amp; Escalator Updates</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/getting-to-airport.aspx" target="_self">Getting to &amp; from the Airport</a> </li>
+
+														</ul>
+													</div>
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">Why MARTA?</div>
+														<ul class="main-nav__category-list">
+															<!--<li>
                                         <a href="economic-impact.aspx"  target="_self">Economic Impact of MARTA</a>                                    </li>  -->
-                            <li> <a tabindex="0" href="http://itsmarta.com/benefits-public-transit.aspx" target="_self">Benefits of Public Transit</a> </li>
-                          </ul>
-                        </div>
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">Latest Videos</div>
-                          <ul class="main-nav__category-list">
-                            <li> <a tabindex="0" title="MARTA Youtube Channel" href="https://www.youtube.com/user/itsmartanews?feature=mhum" target="_blank">MARTA Youtube Channel</a> </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-3">
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">Trip Ideas</div>
-                          <ul class="main-nav__category-list">
-                            <li> <a tabindex="0" href="http://itsmarta.com/food-bar-crawl.aspx" target="_self">Food &amp; Bar Crawl</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/history-tour.aspx" target="_self">History Tour</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/music-venues.aspx" target="_self">Music Venues</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/outdoor-escapes.aspx" target="_self">Outdoor Escapes</a> </li>
-                            <!--<li>
+															<li> <a tabindex="0" href="http://itsmarta.com/benefits-public-transit.aspx" target="_self">Benefits of Public Transit</a> </li>
+														</ul>
+													</div>
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">Latest Videos</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" title="MARTA Youtube Channel" href="https://www.youtube.com/user/itsmartanews?feature=mhum" target="_blank">MARTA Youtube Channel</a> </li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-3">
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">Trip Ideas</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" href="http://itsmarta.com/food-bar-crawl.aspx" target="_self">Food &amp; Bar Crawl</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/history-tour.aspx" target="_self">History Tour</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/music-venues.aspx" target="_self">Music Venues</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/outdoor-escapes.aspx" target="_self">Outdoor Escapes</a> </li>
+															<!--<li>
                                         <a tabindex="0" href="scavenger-hunt.aspx"  target="_self">Scavenger Hunt</a>                                    </li> -->
-                            <li> <a tabindex="0" href="http://itsmarta.com/sights-worth-seeing.aspx" target="_self">Sights Worth Seeing</a> </li>
-                            <!--<li> <a tabindex="0" href="spring-festival-guide.aspx"  target="_self">Spring Festival Guide</a> </li> -->
-                          </ul>
-                        </div>
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">Mobile Apps</div>
-                          <ul class="main-nav__category-list">
-                            <li> <a tabindex="0" href="http://itsmarta.com/marta-on-the-go.aspx" target="_self">MARTA On the Go</a> </li>
-<li> <a tabindex="0" href="http://itsmarta.com/marta-see-say.aspx" target="_self">MARTA See &amp; Say</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/app-developer-resources.aspx" target="_self">App Developer Resources</a> </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-3">
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">Helpful Articles</div>
-                          <ul class="main-nav__category-list">
-<li> <a tabindex="0" title="How to Ride Guide" href="http://itsmarta.com/uploadedfiles/MARTA_101/Helpful_Articles/RideGuide2017Web.pdf" target="_blank">How to Ride Guide</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/sights-worth-seeing.aspx" target="_self">Sights Worth Seeing</a> </li>
+															<!--<li> <a tabindex="0" href="spring-festival-guide.aspx"  target="_self">Spring Festival Guide</a> </li> -->
+														</ul>
+													</div>
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">Mobile Apps</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" href="http://itsmarta.com/marta-on-the-go.aspx" target="_self">MARTA On the Go</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/marta-see-say.aspx" target="_self">MARTA See &amp; Say</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/app-developer-resources.aspx" target="_self">App Developer Resources</a> </li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-3">
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">Helpful Articles</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" title="How to Ride Guide" href="http://itsmarta.com/uploadedfiles/MARTA_101/Helpful_Articles/RideGuide2017Web.pdf" target="_blank">How to Ride Guide</a> </li>
 
-                            <li> <a tabindex="0" title="Take Your bike for a Ride" href="http://itsmarta.com/bring-your-bike.aspx" target="_self">Take Your Bike For A Ride</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/common-questions.aspx" target="_self">Common Questions</a> </li>
+															<li> <a tabindex="0" title="Take Your bike for a Ride" href="http://itsmarta.com/bring-your-bike.aspx" target="_self">Take Your Bike For A Ride</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/common-questions.aspx" target="_self">Common Questions</a> </li>
 
-                            <li> <a tabindex="0" href="http://itsmarta.com/lost-and-found.aspx" target="_self">Lost &amp; Found Items</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/photography-and-film.aspx" target="_self">Photography &amp; Film Policy</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/ride-with-respect.aspx" target="_self">Ride with Respect</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/safety-and-security.aspx" target="_self">Safety &amp; Security</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/traveling-with-kids-pets.aspx" target="_self">Riding with Kids and Pets</a> </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="main-nav__level1" tabindex="0">
-                  <div class="main-nav__dropdown-trigger"><span class="main-nav__label-with-arrow">Fares &amp; Refills</span> </div>
-                  <div class="main-nav__dropdown" style="display: none;">
-                    <div class="row">
-                      <div class="col-xs-12 col-sm-3">
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">Breeze Cards</div>
-                          <ul class="main-nav__category-list">
-                            <li> <a tabindex="0" href="http://itsmarta.com/how-to-guide.aspx" target="_self">Using Your Breeze Card</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/where-to-buy.aspx" target="_self">Where to Buy</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/manage-your-cards.aspx" target="_self">Managing Your Cards and Balances</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/place-group-order.aspx" target="_self">Place Group Orders</a> </li>
-                          </ul>
-                          <div class="main-nav__category">
-                            <div class="main-nav__category-heading"> <br>
-                              Breeze Tickets</div>
-                            <ul class="main-nav__category-list">
-                              <li> <a href="http://itsmarta.com/breeze-tickets.aspx" target="_self">Breeze Tickets Information</a> </li>
- <li> <a href="http://www.breezecard.com/" target="_blank">Breezecard.com</a> </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-3">
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">Fare Programs</div>
-                          <ul class="main-nav__category-list">
-                            <li> <a tabindex="0" href="http://itsmarta.com/fare-programs.aspx" target="_self">Overview</a> <br>
-                              <a tabindex="0" href="http://itsmarta.com/fare-programs.aspx#standard"></a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/reduced-fare-program.aspx" target="_self">Reduced Fare Program</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/mobility-fares.aspx" target="_self">Mobility Fares</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/passpartnership.aspx" target="_self">Partnership Program</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/university-program.aspx" target="_self">University Program</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/student-program.aspx" target="_self">Student Program (K-12)</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/group-discount.aspx" target="_self">Group Discount</a> </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-2">
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">Parking</div>
-                          <ul class="main-nav__category-list">
-                            <li> <a tabindex="0" href="http://itsmarta.com/parking-availability.aspx" target="_self">Parking Availability</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/parking-fees.aspx" target="_self">Parking Fees</a> </li>
-<li> <a tabindex="0" href="http://itsmarta.com/parking.aspx" target="_self">Key Parking Status</a> </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-4">
-                        <div class="main-nav__banner banner"> <img class="responsive-image" alt="Banner" src="./MARTA_files/breeze-cool1.jpg"> </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="main-nav__level1" tabindex="0">
-                  <div class="main-nav__dropdown-trigger"><span class="main-nav__label-with-arrow">More</span> </div>
-                  <div class="main-nav__dropdown" style="display: none;">
-                    <div class="row">
-                      <div class="col-xs-12 col-sm-3">
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">About MARTA</div>
-                          <ul class="main-nav__category-list">
-                            <li> <a tabindex="0" href="http://itsmarta.com/marta-leadership.aspx" target="_self">Leadership</a> </li>
-                            <li> <a tabindex="0" title="History &amp; Vision" href="http://itsmarta.com/marta-history-vision.aspx" target="_self">History &amp; Vision</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/MARTA-at-a-Glance.aspx" target="_self">MARTA at a Glance</a> </li>
-<li> <a tabindex="0" href="http://itsmarta.com/uploadedfiles/SERVICE_STANDARDS%20_FY_2017_Final.pdf" target="_blank">MARTA Service Standards</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/kpihome.aspx" target="_self">Key Performance Indicators</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/marta-in-your-community.aspx" target="_self">MARTA in Your Community</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/marta-Sustainability.aspx" target="_self">MARTA Sustainability</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/News-Press.aspx" target="_self"> News &amp;  Press</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/reports-and-publications.aspx" target="_self">Reports &amp; Publications</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/lost-and-found.aspx" target="_self">Lost &amp; Found Items</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/photography-and-film.aspx" target="_self">Photography &amp; Film Policy</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/ride-with-respect.aspx" target="_self">Ride with Respect</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/safety-and-security.aspx" target="_self">Safety &amp; Security</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/traveling-with-kids-pets.aspx" target="_self">Riding with Kids and Pets</a> </li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="main-nav__level1" tabindex="0">
+										<div class="main-nav__dropdown-trigger"><span class="main-nav__label-with-arrow">Fares &amp; Refills</span> </div>
+										<div class="main-nav__dropdown" style="display: none;">
+											<div class="row">
+												<div class="col-xs-12 col-sm-3">
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">Breeze Cards</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" href="http://itsmarta.com/how-to-guide.aspx" target="_self">Using Your Breeze Card</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/where-to-buy.aspx" target="_self">Where to Buy</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/manage-your-cards.aspx" target="_self">Managing Your Cards and Balances</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/place-group-order.aspx" target="_self">Place Group Orders</a> </li>
+														</ul>
+														<div class="main-nav__category">
+															<div class="main-nav__category-heading"> <br> Breeze Tickets</div>
+															<ul class="main-nav__category-list">
+																<li> <a href="http://itsmarta.com/breeze-tickets.aspx" target="_self">Breeze Tickets Information</a> </li>
+																<li> <a href="http://www.breezecard.com/" target="_blank">Breezecard.com</a> </li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-3">
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">Fare Programs</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" href="http://itsmarta.com/fare-programs.aspx" target="_self">Overview</a> <br>
+																<a tabindex="0" href="http://itsmarta.com/fare-programs.aspx#standard"></a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/reduced-fare-program.aspx" target="_self">Reduced Fare Program</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/mobility-fares.aspx" target="_self">Mobility Fares</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/passpartnership.aspx" target="_self">Partnership Program</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/university-program.aspx" target="_self">University Program</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/student-program.aspx" target="_self">Student Program (K-12)</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/group-discount.aspx" target="_self">Group Discount</a> </li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-2">
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">Parking</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" href="http://itsmarta.com/parking-availability.aspx" target="_self">Parking Availability</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/parking-fees.aspx" target="_self">Parking Fees</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/parking.aspx" target="_self">Key Parking Status</a> </li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-4">
+													<div class="main-nav__banner banner"> <img class="responsive-image" alt="Banner" src="./MARTA_files/breeze-cool1.jpg"> </div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="main-nav__level1" tabindex="0">
+										<div class="main-nav__dropdown-trigger"><span class="main-nav__label-with-arrow">More</span> </div>
+										<div class="main-nav__dropdown" style="display: none;">
+											<div class="row">
+												<div class="col-xs-12 col-sm-3">
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">About MARTA</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" href="http://itsmarta.com/marta-leadership.aspx" target="_self">Leadership</a> </li>
+															<li> <a tabindex="0" title="History &amp; Vision" href="http://itsmarta.com/marta-history-vision.aspx" target="_self">History &amp; Vision</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/MARTA-at-a-Glance.aspx" target="_self">MARTA at a Glance</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/uploadedfiles/SERVICE_STANDARDS%20_FY_2017_Final.pdf" target="_blank">MARTA Service Standards</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/kpihome.aspx" target="_self">Key Performance Indicators</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/marta-in-your-community.aspx" target="_self">MARTA in Your Community</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/marta-Sustainability.aspx" target="_self">MARTA Sustainability</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/News-Press.aspx" target="_self"> News &amp;  Press</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/reports-and-publications.aspx" target="_self">Reports &amp; Publications</a> </li>
 
-<li> <a tabindex="0" href="http://itsmarta.com/EventCalendar.aspx" target="_self">Calendar of Events</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/EventCalendar.aspx" target="_self">Calendar of Events</a> </li>
 
 
-<li> <a tabindex="0" href="http://itsmarta.com/public-hearings-meetings.aspx" target="_self">Public Hearings and Meetings</a> </li>
-                          </ul>
-                        </div>
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">Board of Directors</div>
-                          <ul class="main-nav__category-list">
-                            <li> <a tabindex="0" href="http://itsmarta.com/bod-overview.aspx" target="_self">Overview</a> </li>
-                            <li> <a tabindex="0" title="Board Documents" href="http://itsmarta.com/board-documents.aspx" target="_self">Board Documents</a> </li>
-                          </ul>
-                        </div>
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">Projects</div>
-                          <ul class="main-nav__category-list">
-                            <li> <a tabindex="0" href="http://itsmarta.com/current-projects.aspx" target="_self">Projects Overview</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/public-hearings-meetings.aspx" target="_self">Public Hearings and Meetings</a> </li>
+														</ul>
+													</div>
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">Board of Directors</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" href="http://itsmarta.com/bod-overview.aspx" target="_self">Overview</a> </li>
+															<li> <a tabindex="0" title="Board Documents" href="http://itsmarta.com/board-documents.aspx" target="_self">Board Documents</a> </li>
+														</ul>
+													</div>
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">Projects</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" href="http://itsmarta.com/current-projects.aspx" target="_self">Projects Overview</a> </li>
 
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-3">
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">Careers at MARTA</div>
-                          <ul class="main-nav__category-list">
-                            <li> <a tabindex="0" href="http://itsmarta.com/how-to-apply.aspx" target="_self">How to Apply</a> </li>
-                            <li> <a tabindex="0" title="Current Job Openings" href="http://itsmarta.com/current-job-openings.aspx" target="_self">Current Job Openings</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/marta-internship-program.aspx" target="_self">MARTA Internship Program</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/benefits.aspx" target="_self">Benefits</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/culture.aspx" target="_self">Culture</a> </li>
-                          </ul>
-                        </div>
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">Diversity &amp; Inclusion</div>
-                          <ul class="main-nav__category-list">
-                            <li> <a tabindex="0" title="Overview" href="http://itsmarta.com/deo-overview.aspx" target="_self">Overview</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/affirmative-action-plan.aspx" target="_self">Affirmative Action Plan</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/dbe-program.aspx" target="_self">Disadvantaged Business Enterprises (DBE) Program</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/marta-accessibility-committee.aspx" target="_self">MARTA Accessibility Committee</a> </li>
-                          </ul>
-                        </div>
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">Employee Links</div>
-                          <ul class="main-nav__category-list">
-<li> <a tabindex="0" href="http://itsmarta.com/employee-portal.aspx" target="_self">Employee Portal</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/marta-pension-information.aspx" target="_self">Pension Information</a> </li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-3">
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">Careers at MARTA</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" href="http://itsmarta.com/how-to-apply.aspx" target="_self">How to Apply</a> </li>
+															<li> <a tabindex="0" title="Current Job Openings" href="http://itsmarta.com/current-job-openings.aspx" target="_self">Current Job Openings</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/marta-internship-program.aspx" target="_self">MARTA Internship Program</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/benefits.aspx" target="_self">Benefits</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/culture.aspx" target="_self">Culture</a> </li>
+														</ul>
+													</div>
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">Diversity &amp; Inclusion</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" title="Overview" href="http://itsmarta.com/deo-overview.aspx" target="_self">Overview</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/affirmative-action-plan.aspx" target="_self">Affirmative Action Plan</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/dbe-program.aspx" target="_self">Disadvantaged Business Enterprises (DBE) Program</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/marta-accessibility-committee.aspx" target="_self">MARTA Accessibility Committee</a> </li>
+														</ul>
+													</div>
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">Employee Links</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" href="http://itsmarta.com/employee-portal.aspx" target="_self">Employee Portal</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/marta-pension-information.aspx" target="_self">Pension Information</a> </li>
 
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-3">
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">MARTA Police</div>
-                          <ul class="main-nav__category-list">
-                            <li> <a tabindex="0" href="http://itsmarta.com/police-overview.aspx" target="_self">Overview</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/police-mission.aspx" target="_self">Our Mission</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/chief-of-police.aspx" target="_self">Chief of Police</a> </li>
-                            <li>
-                            </li><li> <a tabindex="0" href="http://itsmarta.com/mpd-operations.aspx" target="_self">Police Operations</a> </li>
-                            <li>
-                            </li><li> <a tabindex="0" href="http://itsmarta.com/mpd-administration2.aspx" target="_self">Police Administration</a> </li>
-                            <li>
-                            </li><li>
-                            </li><li> <a tabindex="0" href="http://itsmarta.com/crimestats.aspx" target="_self">Crime Analysis</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/join-the-force.aspx" target="_self">Join the Force</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/awards-and-recognition.aspx" target="_self">Awards &amp; Recognition</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/office-professional-standards.aspx" target="_self">Compliments &amp; Complaints</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/police-community-outreach.aspx" target="_self">Community Outreach</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/police-FAQs.aspx" target="_self">FAQs</a> </li>
-                          </ul>
-                        </div>
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">Transit Oriented Development</div>
-                          <ul class="main-nav__category-list">
-                            <li> <a tabindex="0" href="http://itsmarta.com/tod-overview.aspx" target="_self">Overview</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/guidelines-policies.aspx" target="_self">Guidelines &amp; Policies</a> </li>
-                            <li> <a tabindex="0" title="Real Estate" href="http://itsmarta.com/real-estate.aspx" target="_self">Real Estate</a> </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-3">
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">Procurement</div>
-                          <ul class="main-nav__category-list">
-                            <li> <a tabindex="0" href="http://itsmarta.com/procurement-overview.aspx" target="_self">Overview</a> </li>
-                            <li> <a tabindex="0" href="https://martabid.itsmarta.com/ProductsBid.aspx" target="_blank">Current Opportunities</a> </li>
-                            <li> <a tabindex="0" href="https://martabid.itsmarta.com/BidResult.aspx" target="_blank">Bid Results</a> </li>
-                            <li> <a tabindex="0" href="https://martabid.itsmarta.com/Awarded.aspx" target="_blank">Recently Awarded</a> </li>
-                            <li> <a tabindex="0" href="https://martabid.itsmarta.com/AnticipProcurement.aspx" target="_blank">Anticipated Procurement</a> </li>
-                            <li> <a tabindex="0" title="New Vendor Registration" href="http://itsmarta.com/new-vendor-registration.aspx" target="_blank">New Vendor Registration</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/vendor-portal-login.aspx">Log In Vendor Portal</a> </li>
-                          </ul>
-                        </div>
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">Advertising</div>
-                          <ul class="main-nav__category-list">
-                            <li> <a tabindex="0" href="http://itsmarta.com/advertising-on-marta.aspx" target="_self">Advertising on MARTA</a> </li>
-                          </ul>
-                        </div>
-                        <div class="main-nav__category">
-                          <div class="main-nav__category-heading">Contact</div>
-                          <ul class="main-nav__category-list">
-                            <li> <a tabindex="0" href="http://itsmarta.com/helpful-numbers.aspx" target="_self">Helpful Phone #s &amp; Emails</a> </li>
-                            <li> <a tabindex="0" href="http://itsmarta.com/mailing-address.aspx" target="_self">Mailing Addresses</a> </li>
-                            <li> <a tabindex="0" href="https://www.itsmarta.com/ht_login.aspx" target="_self">Comments &amp; Suggestions</a> </li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-3">
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">MARTA Police</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" href="http://itsmarta.com/police-overview.aspx" target="_self">Overview</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/police-mission.aspx" target="_self">Our Mission</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/chief-of-police.aspx" target="_self">Chief of Police</a> </li>
+															<li>
+															</li>
+															<li> <a tabindex="0" href="http://itsmarta.com/mpd-operations.aspx" target="_self">Police Operations</a> </li>
+															<li>
+															</li>
+															<li> <a tabindex="0" href="http://itsmarta.com/mpd-administration2.aspx" target="_self">Police Administration</a> </li>
+															<li>
+															</li>
+															<li>
+															</li>
+															<li> <a tabindex="0" href="http://itsmarta.com/crimestats.aspx" target="_self">Crime Analysis</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/join-the-force.aspx" target="_self">Join the Force</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/awards-and-recognition.aspx" target="_self">Awards &amp; Recognition</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/office-professional-standards.aspx" target="_self">Compliments &amp; Complaints</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/police-community-outreach.aspx" target="_self">Community Outreach</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/police-FAQs.aspx" target="_self">FAQs</a> </li>
+														</ul>
+													</div>
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">Transit Oriented Development</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" href="http://itsmarta.com/tod-overview.aspx" target="_self">Overview</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/guidelines-policies.aspx" target="_self">Guidelines &amp; Policies</a> </li>
+															<li> <a tabindex="0" title="Real Estate" href="http://itsmarta.com/real-estate.aspx" target="_self">Real Estate</a> </li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-3">
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">Procurement</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" href="http://itsmarta.com/procurement-overview.aspx" target="_self">Overview</a> </li>
+															<li> <a tabindex="0" href="https://martabid.itsmarta.com/ProductsBid.aspx" target="_blank">Current Opportunities</a> </li>
+															<li> <a tabindex="0" href="https://martabid.itsmarta.com/BidResult.aspx" target="_blank">Bid Results</a> </li>
+															<li> <a tabindex="0" href="https://martabid.itsmarta.com/Awarded.aspx" target="_blank">Recently Awarded</a> </li>
+															<li> <a tabindex="0" href="https://martabid.itsmarta.com/AnticipProcurement.aspx" target="_blank">Anticipated Procurement</a> </li>
+															<li> <a tabindex="0" title="New Vendor Registration" href="http://itsmarta.com/new-vendor-registration.aspx" target="_blank">New Vendor Registration</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/vendor-portal-login.aspx">Log In Vendor Portal</a> </li>
+														</ul>
+													</div>
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">Advertising</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" href="http://itsmarta.com/advertising-on-marta.aspx" target="_self">Advertising on MARTA</a> </li>
+														</ul>
+													</div>
+													<div class="main-nav__category">
+														<div class="main-nav__category-heading">Contact</div>
+														<ul class="main-nav__category-list">
+															<li> <a tabindex="0" href="http://itsmarta.com/helpful-numbers.aspx" target="_self">Helpful Phone #s &amp; Emails</a> </li>
+															<li> <a tabindex="0" href="http://itsmarta.com/mailing-address.aspx" target="_self">Mailing Addresses</a> </li>
+															<li> <a tabindex="0" href="https://www.itsmarta.com/ht_login.aspx" target="_self">Comments &amp; Suggestions</a> </li>
 
-                            <li> <a tabindex="0" href="http://itsmarta.com/lost-found.aspx" target="_self">Lost Item Inquiry Form</a> </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="main-nav__level1" tabindex="0">
-                  <div class="main-nav__dropdown-trigger main-nav__dropdown-trigger--search"><span class="main-nav__search-trigger-label">Search</span> </div>
-                  <div class="main-nav__dropdown" style="display: none;">
-                    <div class="row">
-                      <div class="col-xs-12">
-                        <div class="main-nav__search-form form">
-                          <div class="js-validate-form" novalidate="novalidate">
-                            <div class="form__field">
-                              <label class="sr-only" for="siteSearch">Search</label>
-                              <input name="ctl00$siteSearch" type="text" id="ctl00_siteSearch" placeholder="Search">
-                              <span id="ctl00_RequiredFieldValidator1" style="display:none;">Please enter search text</span>
-                              <input onclick="if (typeof(Page_ClientValidate) == &#39;function&#39;) Page_ClientValidate(&#39;SearchGroup&#39;); " name="ctl00$Button1" type="image" id="ctl00_Button1" alt="Submit" class="SearchImage" tabindex="0" validationgroup="SearchGroup">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="site-header__secondary">
-          <div class="mini-service-updates">
-            <div class="mini-service-updates__label">Service Updates</div>
-            <div id="ctl00_lblServiceAlerts"><div class="mini-service-updates__items">
-                <div tabindex="0" class="mini-service-updates__item">
-                  <a tabindex="-1" class="mini-service-updates__trigger" href="http://itsmarta.com/service-updates.aspx"><span class="mini-service-updates__trigger-label mini-service-updates__trigger-label--bus">Bus Alerts</span></a><div class="mini-service-updates__content">
-                    <ul class="mini-service-updates__alerts"> <li class="mini-service-updates__alert">
-                        <div class="mini-service-updates__alert-name">No service advisories at this time</div>
-                        <div class="mini-service-updates__alert-description"></div>
-                      </li>
-                    </ul>
-                    <a href="http://itsmarta.com/service-updates.aspx" tabindex="0">See all service alerts</a>
-                  </div>
-                </div><div tabindex="0" class="mini-service-updates__item">
-                  <a tabindex="-1" class="mini-service-updates__trigger" href="http://itsmarta.com/service-updates.aspx"><span class="mini-service-updates__trigger-label mini-service-updates__trigger-label--train">Train Alerts</span></a><div class="mini-service-updates__content">
-                    <ul class="mini-service-updates__alerts"> <li class="mini-service-updates__alert">
-                        <div class="mini-service-updates__alert-description">No service advisories at this time</div>
-                        <div class="mini-service-updates__alert-description"></div>
-                      </li>
-                    </ul>
-                    <a href="http://itsmarta.com/service-updates.aspx" tabindex="0">See all service alerts</a>
-                  </div>
-                </div></div></div>
-            <!--  <div class="mini-service-updates__items">
+															<li> <a tabindex="0" href="http://itsmarta.com/lost-found.aspx" target="_self">Lost Item Inquiry Form</a> </li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="main-nav__level1" tabindex="0">
+										<div class="main-nav__dropdown-trigger main-nav__dropdown-trigger--search"><span class="main-nav__search-trigger-label">Search</span> </div>
+										<div class="main-nav__dropdown" style="display: none;">
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="main-nav__search-form form">
+														<div class="js-validate-form" novalidate="novalidate">
+															<div class="form__field">
+																<label class="sr-only" for="siteSearch">Search</label>
+																<input name="ctl00$siteSearch" type="text" id="ctl00_siteSearch" placeholder="Search">
+																<span id="ctl00_RequiredFieldValidator1" style="display:none;">Please enter search text</span>
+																<input onclick="if (typeof(Page_ClientValidate) == &#39;function&#39;) Page_ClientValidate(&#39;SearchGroup&#39;); " name="ctl00$Button1" type="image" id="ctl00_Button1" alt="Submit" class="SearchImage" tabindex="0" validationgroup="SearchGroup">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="site-header__secondary">
+						<div class="mini-service-updates">
+							<div class="mini-service-updates__label">Service Updates</div>
+							<div id="ctl00_lblServiceAlerts">
+								<div class="mini-service-updates__items">
+									<div tabindex="0" class="mini-service-updates__item">
+										<a tabindex="-1" class="mini-service-updates__trigger" href="http://itsmarta.com/service-updates.aspx"><span class="mini-service-updates__trigger-label mini-service-updates__trigger-label--bus">Bus Alerts</span></a>
+										<div class="mini-service-updates__content">
+											<ul class="mini-service-updates__alerts">
+												<li class="mini-service-updates__alert">
+													<div class="mini-service-updates__alert-name">No service advisories at this time</div>
+													<div class="mini-service-updates__alert-description"></div>
+												</li>
+											</ul>
+											<a href="http://itsmarta.com/service-updates.aspx" tabindex="0">See all service alerts</a>
+										</div>
+									</div>
+									<div tabindex="0" class="mini-service-updates__item">
+										<a tabindex="-1" class="mini-service-updates__trigger" href="http://itsmarta.com/service-updates.aspx"><span class="mini-service-updates__trigger-label mini-service-updates__trigger-label--train">Train Alerts</span></a>
+										<div class="mini-service-updates__content">
+											<ul class="mini-service-updates__alerts">
+												<li class="mini-service-updates__alert">
+													<div class="mini-service-updates__alert-description">No service advisories at this time</div>
+													<div class="mini-service-updates__alert-description"></div>
+												</li>
+											</ul>
+											<a href="http://itsmarta.com/service-updates.aspx" tabindex="0">See all service alerts</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--  <div class="mini-service-updates__items">
                 <div class="mini-service-updates__item">
                   <a class="mini-service-updates__trigger" href="service-updates.html"><span class="mini-service-updates__alert-number">4</span><span class="mini-service-updates__trigger-label mini-service-updates__trigger-label--bus">Minor Delays</span></a>
                   <div class="mini-service-updates__content">
@@ -474,45 +573,48 @@ return true;
                   </div>
                 </div>
               </div> -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div>
 
-<div class="l-page">
+			<div class="l-page">
 
-<!-- Homepage banner -->
-        <div id="ctl00_ContentPlaceHolder1_ContentBlock3">
-	<div class="mantle" style="background-image: url(&quot;http://itsmarta.com/images/mantle-accessible.jpg&quot;);">
-    <div class="container">
-        <div class="row">
+				<!-- Homepage banner -->
+				<div id="ctl00_ContentPlaceHolder1_ContentBlock3">
+					<div class="mantle" style="background-image: url(&quot;http://itsmarta.com/images/mantle-accessible.jpg&quot;);">
+						<div class="container">
+							<div class="row">
 
-            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6" style="width: 90%; padding-left: 20px;">
-
-
-                <br>
-
-                <h2 class="mantle__heading"> <span class="mantle__heading-slash mantle__heading-slash--orange"></span> <span class="mantle__heading-text"><br> Mobility ETA</span></h2>
-                <br>
+								<div class="col-xs-12 col-sm-10 col-md-8 col-lg-6" style="width: 90%; padding-left: 20px;">
 
 
-                <div class="mantle__content">
+									<br>
+
+									<h2 class="mantle__heading"> <span class="mantle__heading-slash mantle__heading-slash--orange"></span> <span class="mantle__heading-text"><br> Mobility ETA</span></h2>
+									<br>
+
+
+									<div class="mantle__content">
 
 
 
 
-                    <!-- <a class="mantle__cta button"        href="spring-festival-guide.aspx" data-ektron-url="spring-festival-guide.aspx"           >Click here</a>     -->
+										<!-- <a class="mantle__cta button"        href="spring-festival-guide.aspx" data-ektron-url="spring-festival-guide.aspx"           >Click here</a>     -->
 
 
-                    <!-- <h2 style="color: white;">We value your feedback, <a                                                                   href="https://www.surveymonkey.com/r/itsmarta-web" data-ektron-url="https://www.surveymonkey.com/r/itsmarta-web"                                                                                                                                    target="_blank">Click here</a></h2>   -->                </div>      </div>    </div>  </div>
-</div>
-</div>
+										<!-- <h2 style="color: white;">We value your feedback, <a                                                                   href="https://www.surveymonkey.com/r/itsmarta-web" data-ektron-url="https://www.surveymonkey.com/r/itsmarta-web"                                                                                                                                    target="_blank">Click here</a></h2>   --></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-        <div class="container">
-            <div class="row">
-            <div>
+				<div class="container">
+					<div class="row">
+						<div>
 							<div id="mobility-eta" style="width:370px; margin:auto">
 							</div>
 
@@ -521,387 +623,445 @@ return true;
 							<script src="promise.min.js" charset="utf-8">
 							</script>
 
-							  <script type="text/javascript">
+							<script type="text/javascript">
+								var etaColors = {
+									yellow: "#EFE455",
+									green: "#8AB755",
+									red: "#FC7455"
+								}
 
-									var etaColors = {
-										yellow: "#EFE455",
-										green: "#8AB755",
-										red: "#FC7455"
+								var statusColor;
+
+								var martaResponse = {};
+								var bookings = [];
+								var clientName = "";
+
+								window.onload = init;
+
+								function init() {
+									addLogInScreen();
+									addLogInListeners();
+								}
+
+								function showInfo(username, password) {
+									getTrips(username, password).then(
+										function() {
+											showTrips();
+											setMarker();
+										}
+									)
+								}
+
+
+								function addLogInScreen() {
+									document.querySelector("#mobility-eta").innerHTML =
+										'<div class="form-wrapper" style="text-align:center; margin-top: 20px; margin-bottom: 40px"><form class="" id="unpw-form" method="post"> <h1 style="margin-bottom: 40px;"> Log In </h1> <input type="text" name="providedUsername" value="" placeholder="Client ID" style="font-size:18px; padding: 3px"> <br><br> <input type="password" name="providedPassword" id="pw" value="" placeholder="Password" style="font-size:18px; padding: 3px"> <br><br><br> </form> <button type="button" id="login" style="font-size:18px; padding: 20px">Check My Trips</button><div id="output"><br><br><br> If you do not know your Client ID or Password, you can call Reservations at (404) 848-5826.<br><br> For a demo, enter username <b>test</b> and password <b>test</b>. Contact markthomasnoonan@gmail.com with questions or feedback. </div></div> </div>'
+								}
+
+								function addLogInListeners() {
+									console.log("added");
+									var usernameInput =
+									document.querySelector('input[name=providedUsername]');
+									var passwordInput = document.querySelector('input[name=providedPassword]');
+
+									document.querySelector('#login').addEventListener('click', function() {
+										var username = usernameInput.value;
+										var password = passwordInput.value;
+										console.log(username,password);
+										showInfo(username, password);
+
+									});
+
+									document.querySelector('#pw').addEventListener('keyup', function(event) {
+										if (event.keyCode == 13) {
+											var username = usernameInput.value;
+											var password = passwordInput.value;
+												console.log(username,password);
+											showInfo(username, password);
+
+										}
+									});
+								}
+
+								function getTrips(username, password) {
+
+									return new Promise(function(resolve, reject) {
+
+										var xhr = new XMLHttpRequest();
+										xhr.open('POST', "scrape.php", true);
+										xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+										xhr.onload = function() {
+											if (xhr.readyState == 4 && xhr.status === 200) {
+												resolve(handleMartaData(xhr.responseText));
+											} else {
+												reject(Error('Request failed, status was ' + xhr.statusText));
+											}
+										};
+										xhr.send("providedUsername=" + username + "&providedPassword=" + password);
+									});
+								}
+
+								function handleMartaData(xhrResponse) {
+									martaResponse = JSON.parse(xhrResponse);
+									bookings = martaResponse[0].bookings;
+									clientName = martaResponse[0].clientName;
+								}
+
+
+
+								function showTrips() {
+									var htmlBuffer =
+										'<div class="bookings-wrapper" style="display: inline-block;padding:20px;font-size: 14px;text-align: center;font-family: sans-serif;"><div class="client-info text-align-center"> Hi, <b>' +
+										clientName + '</b>    </div>' + '<h1>Your Bookings</h1>';
+
+									bookings.forEach(function(booking) {
+										htmlBuffer +=
+											'<div class="booking plan-a-trip-box" style="box-shadow: 0 0 3px 2px rgba(200,200,200,0.7); border-radius: 4px; margin: 10px; padding: 0 10px 10px 8px; padding-bottom: 6px; width: 310px; text-align: center; display:inline-block;"> <div class="date-and-id" id="date-and-id"> <span class="display-date"><h2 style="border:0; margin-bottom: 4px; margin-top: 12px"><b>' +
+											booking.displayDate + '</b></h2></span><span><b>Booking ID</b>: ' + booking.bookingID +
+											'</span> | <span><b>Ready Time</b>: ' + booking.displayReadyTime +
+											'</span></div><hr style="border: 1px solid #fff;"><div class="booking-status" style="margin-top: 8px; margin-bottom: 7px;"><span style="font-weight:bold; font-size: 16px;">Trip Status</span><br> <span class="late-status" style="color:' +
+											etaColors[booking.statusColor] + '">' + booking.status + (booking.statusDescription || ".") + '</span></div>' +
+											'<div class="progress-wrapper" style="display: none;margin-bottom: 10px;font-size: 12px; "> <div class="labels" style="padding-top: 3px; text-align: left; line-height: 1.2; margin-left: -6px;"> <div class="label left" style="width: auto;text-align: left;display: inline-block;padding: 0;"> <span class="tool-tip" style="background-color: #fff;color: #000;border-radius: 3px;display: inline-block;padding: 3px;margin-bottom: -2px;"><b>Start Window</b><br>' +
+											booking.displayReadyTime +
+											'</span><br>&nbsp;▼</div> <div class="label center" style="width: auto;text-align: left;display: inline-block;transform: translateX(45px);padding: 0"><span class="tool-tip" style="background-color: #fff;color: #000;border-radius: 3px;display: inline-block;padding: 3px;margin-bottom: -2px;"><b>End Window</b><br>' +
+											booking.displayEndWindow +
+											'</span><br>&nbsp;▼</div></div> <div class="outer" style="text-align: left; width: 240px; background-color: #111; border-radius: 10px; overflow: hidden;"> <div class="inner" style="height: 18px; background-color: #595; background: linear-gradient(to right, #595 0%, #ee5 50%, #f55 80%);"> <span class="eta label" style="position: relative;display: inline-block;box-sizing: border-box;height: 100%;padding-top: 5px;text-align: left;transform: translateY(-5px);" aria-hidden="true"><img src="assets/martabus.png" id="martabus" style="height: 18px; display: inline; padding: 0 5px"/></span> </div> </div> <div class="eta-tooltip" style="width: auto;text-align: left;"> &nbsp;▲<br><span class="tool-tip" style="background-color: #fff;color: #000;border-radius: 3px;display: inline-block;padding: 3px;transform: translateY(-6px); line-height:1.2"><b>Your ETA</b></span></div> <span class="eta-wrapper" style="padding-top: 2px; display: inline-block; font-size: 14px; line-height: 1.3">Bus expected at <b>' +
+											(booking.displayEta || "No ETA yet") + '</b>,<br>' + (booking.delayInMinutesDescription || "") + '</span></div><div class="ready-time-gage" style="text-align: left"><hr style="border: 1px solid #fff;"><div><b>Pick Up</b><Br>' + booking.pickupAddress +
+											'<br><Br><b>Drop Off</b><br>' + booking.dropOffAddress +
+											'</div><br>' + '</div></div><br>';
+
+									});
+
+
+									htmlBuffer += "</div>";
+									document.querySelector('#mobility-eta').innerHTML = htmlBuffer;
+								}
+
+								function setMarker() {
+
+									/* to set these markers for every trip, we would need to pass
+									in the relevant delayInMinutes and specify the target image
+									and tooltip that we are moving.
+									*/
+
+									var lateMins = bookings[0].delayInMinutes;
+									var markerNumber = lateMins * 4;
+									var markerDistance = markerNumber;
+									var remainingDistance = 0;
+									var borderStyle = " solid rgba(100,100,100,0.5)";
+
+									// to account for being very late.
+									if (markerDistance < 234) {
+										markerDistance += "px";
+										remainingDistance = (240 - markerNumber - 28) + "px";
+									} else {
+										markerDistance = "234" + "px";
 									}
 
-									var statusColor;
+									document.querySelector("#martabus").style.borderLeft = markerDistance + borderStyle;
+									document.querySelector("#martabus").style.borderRight = remainingDistance + borderStyle;
+									document.querySelector(".eta-tooltip").style.marginLeft = markerDistance;
 
-							    var martaResponse = {};
-							    var bookings = [];
-							    var clientName = "";
+									document.querySelector(".progress-wrapper").style.display = "inline-block";
+									//the last line is just a quick hack to only show this on the first trip.
 
-							    window.onload = init;
-
-							    function init() {
-							      getTrips().then(
-							        function() {
-							          showTrips();
-							          setMarker();
-							        }
-							      )
-							    }
-
-							    function getTrips(username, password) {
-
-							      return new Promise(function(resolve, reject) {
-
-							        var xhr = new XMLHttpRequest();
-							        xhr.open('POST', "scrape.php", true);
-							        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-							        xhr.onload = function() {
-							          if (xhr.readyState == 4 && xhr.status === 200) {
-							            resolve(handleMartaData(xhr.responseText));
-							          } else {
-							            reject(Error('Request failed, status was ' + xhr.statusText));
-							          }
-							        };
-							        xhr.send(null); //"providedUsername=" + username + "&providedPassword=" + password);
-							      });
-
-							    }
-
-							    function handleMartaData(xhrResponse) {
-							      martaResponse = JSON.parse(xhrResponse);
-							      bookings = martaResponse[0].bookings;
-							      clientName = martaResponse[0].clientName;
-							    }
+									//TODO: create proper templates for each trip category (Future, Past, Active, Cancelled)
 
 
+								}
+							</script>
 
-									function showTrips() {
-							      var htmlBuffer =
-							        '<div class="bookings-wrapper" style="display: inline-block;padding:20px;font-size: 14px;text-align: center;font-family: sans-serif;"><div class="client-info text-align-center"> Hi, <b>' +
-							        clientName + '</b>    </div>' + '<h1>Your Bookings</h1>';
-
-							      bookings.forEach(function(booking) {
-							        htmlBuffer +=
-							          '<div class="booking plan-a-trip-box" style="box-shadow: 0 0 3px 2px rgba(200,200,200,0.7); border-radius: 4px; margin: 10px; padding: 0 10px 10px 8px; padding-bottom: 6px; width: 310px; text-align: center; display:inline-block;"> <div class="date-and-id" id="date-and-id"> <span class="display-date"><h2 style="border:0; margin-bottom: 4px; margin-top: 12px"><b>' +
-							          booking.displayDate + '</b></h2></span><span><b>Booking ID</b>: ' + booking.bookingID +
-							          '</span> | <span><b>Ready Time</b>: ' + booking.displayReadyTime +
-							          '</span></div><hr style="border: 1px solid #fff;"><div class="booking-status" style="margin-top: 8px; margin-bottom: 7px;"><span style="font-weight:bold; font-size: 16px;">Trip Status</span><br> <span class="late-status" style="color:' + etaColors[booking.statusColor] + '">' + booking.status +  (booking.statusDescription || ".") + '</span></div>' + '<div class="progress-wrapper" style="display: none;margin-bottom: 10px;font-size: 12px; "> <div class="labels" style="padding-top: 3px; text-align: left; line-height: 1.2; margin-left: -6px;"> <div class="label left" style="width: auto;text-align: left;display: inline-block;padding: 0;"> <span class="tool-tip" style="background-color: #fff;color: #000;border-radius: 3px;display: inline-block;padding: 3px;margin-bottom: -2px;"><b>Start Window</b><br>' +
-							          booking.displayReadyTime + '</span><br>&nbsp;▼</div> <div class="label center" style="width: auto;text-align: left;display: inline-block;transform: translateX(45px);padding: 0"><span class="tool-tip" style="background-color: #fff;color: #000;border-radius: 3px;display: inline-block;padding: 3px;margin-bottom: -2px;"><b>End Window</b><br>' + booking.displayEndWindow +
-							          '</span><br>&nbsp;▼</div></div> <div class="outer" style="text-align: left; width: 240px; background-color: #111; border-radius: 10px; overflow: hidden;"> <div class="inner" style="height: 18px; background-color: #595; background: linear-gradient(to right, #595 0%, #ee5 50%, #f55 80%);"> <span class="eta label" style="position: relative;display: inline-block;box-sizing: border-box;height: 100%;padding-top: 5px;text-align: left;transform: translateY(-5px);" aria-hidden="true"><img src="assets/martabus.png" id="martabus" style="height: 18px; display: inline; padding: 0 5px"/></span> </div> </div> <span class="eta-wrapper" style="padding-top: 2px; display: inline-block; font-size: 14px; margin-top:12px; line-height: 1.3">Bus expected at <b>' +
-							          (booking.displayEta || "No ETA yet") + '</b>,<br>' + (booking.delayInMinutesDescription || "") + '</span></div><div class="ready-time-gage" style="text-align: left"><hr style="border: 1px solid #fff;"><div><b>Pick Up</b><Br>' + booking.pickupAddress + '<br><Br><b>Drop Off</b><br>' + booking.dropOffAddress +
-							          '</div><br>' + '</div></div><br>';
-
-							      });
-
-
-							      htmlBuffer += "</div>";
-							      document.querySelector('#mobility-eta').innerHTML += htmlBuffer;
-							    }
-
-							    function setMarker() {
-							      var lateMins = bookings[0].delayInMinutes;
-										var markerNumber = lateMins * 4;
-							      var markerDistance = markerNumber;
-										var remainingDistance = 0;
-										var borderStyle = " solid rgba(100,100,100,0.5)";
-
-							      // to account for being very late.
-							      if (markerDistance < 234) {
-							        markerDistance += "px";
-											remainingDistance = (240 - markerNumber - 28) + "px";
-							      } else {
-							        markerDistance = "234" + "px";
-							      }
-							      document.querySelector("#martabus").style.borderLeft = markerDistance + borderStyle;
-										document.querySelector("#martabus").style.borderRight = remainingDistance + borderStyle;
-							      document.querySelector(".progress-wrapper").style.display = "inline-block";
-							      //the last line is just a quick hack to only show this on the first trip.
-							      //TODO: create proper templates for each trip category (Future, Past, Active, Cancelled)
-							    }
-
-							  </script>
-
-            </div>
+						</div>
 
 
 
 
-<!--- back to top -->
+						<!--- back to top -->
 
-<a class="back-to-top js-back-to-top" href="http://itsmarta.com/#" style="bottom: 0px; position: fixed; display: none;">
-    <div class="back-to-top__text">Back to top</div>
-</a>
+						<a class="back-to-top js-back-to-top" href="http://itsmarta.com/#" style="bottom: 0px; position: fixed; display: none;">
+							<div class="back-to-top__text">Back to top</div>
+						</a>
 
-</div>
-</div>
+					</div>
+				</div>
 
 
 
 
 
-  <!-- Footer Begining -->
-  <footer class="site-footer">
-    <div class="site-footer__primary">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-8">
-            <div class="row">
-              <div class="col-xs-12 col-md-6">
-                <div class="site-footer__mission">
-                  <h4 class="site-footer__heading">Our Mission</h4>
-                  <p>To advocate and provide safe, multi-modal transit services that advance prosperity, connectivity and equity for a more livable region.</p>
-                </div>
-              </div>
-              <div class="col-xs-12 col-md-6">
-                <div class="site-footer__quick-links">
-                  <h4 class="site-footer__heading">Quick Links</h4>
-                  <ul>
-                    <li> <a href="http://itsmarta.com/marta-leadership.aspx" tabindex="0">About MARTA</a> </li>
-                    <li> <a href="http://itsmarta.com/employee-portal.aspx" tabindex="0">Employee Links</a> </li>
-                    <li> <a href="http://itsmarta.com/how-to-apply.aspx" tabindex="0">Careers</a> </li>
-                    <li> <a href="http://itsmarta.com/deo-overview.aspx" tabindex="0">Diversity &amp; Inclusion</a> </li>
-<li> <a href="http://itsmarta.com/marta-mobility.aspx" tabindex="0">Accessibility Services</a> </li>
-                    <li> <a href="http://itsmarta.com/police-overview.aspx" tabindex="0">MARTA Police</a> </li>
-                    <li> <a href="http://itsmarta.com/tod-overview.aspx" tabindex="0">Transit Oriented Development</a> </li>
-                    <li> <a href="http://itsmarta.com/procurement-overview.aspx" tabindex="0">Procurement</a> </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="row">
-              <div class="col-xs-12">
-                <div class="site-footer__contact">
-                  <h4 class="site-footer__heading">Contact</h4>
-                  <ul>
-                    <li tabindex="0">
-                      <div class="site-footer__contact-label">Route &amp; Schedule Info</div>
-                      <div class="site-footer__contact-number">404-848-5000 </div>
-                    </li><br>
-                    <li tabindex="0">
-                      <div class="site-footer__contact-label">Customer Service</div>
-                      <div class="site-footer__contact-number">404-848-5000 </div>
-                    </li><br>
-                    <li tabindex="0">
-                      <div class="site-footer__contact-label">MARTA Police</div>
-                      <div class="site-footer__contact-number">404-848-4900</div>
-                    </li><br>
+				<!-- Footer Begining -->
+				<footer class="site-footer">
+					<div class="site-footer__primary">
+						<div class="container">
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 col-md-8">
+									<div class="row">
+										<div class="col-xs-12 col-md-6">
+											<div class="site-footer__mission">
+												<h4 class="site-footer__heading">Our Mission</h4>
+												<p>To advocate and provide safe, multi-modal transit services that advance prosperity, connectivity and equity for a more livable region.</p>
+											</div>
+										</div>
+										<div class="col-xs-12 col-md-6">
+											<div class="site-footer__quick-links">
+												<h4 class="site-footer__heading">Quick Links</h4>
+												<ul>
+													<li> <a href="http://itsmarta.com/marta-leadership.aspx" tabindex="0">About MARTA</a> </li>
+													<li> <a href="http://itsmarta.com/employee-portal.aspx" tabindex="0">Employee Links</a> </li>
+													<li> <a href="http://itsmarta.com/how-to-apply.aspx" tabindex="0">Careers</a> </li>
+													<li> <a href="http://itsmarta.com/deo-overview.aspx" tabindex="0">Diversity &amp; Inclusion</a> </li>
+													<li> <a href="http://itsmarta.com/marta-mobility.aspx" tabindex="0">Accessibility Services</a> </li>
+													<li> <a href="http://itsmarta.com/police-overview.aspx" tabindex="0">MARTA Police</a> </li>
+													<li> <a href="http://itsmarta.com/tod-overview.aspx" tabindex="0">Transit Oriented Development</a> </li>
+													<li> <a href="http://itsmarta.com/procurement-overview.aspx" tabindex="0">Procurement</a> </li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-6 col-md-4">
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="site-footer__contact">
+												<h4 class="site-footer__heading">Contact</h4>
+												<ul>
+													<li tabindex="0">
+														<div class="site-footer__contact-label">Route &amp; Schedule Info</div>
+														<div class="site-footer__contact-number">404-848-5000 </div>
+													</li><br>
+													<li tabindex="0">
+														<div class="site-footer__contact-label">Customer Service</div>
+														<div class="site-footer__contact-number">404-848-5000 </div>
+													</li><br>
+													<li tabindex="0">
+														<div class="site-footer__contact-label">MARTA Police</div>
+														<div class="site-footer__contact-number">404-848-4900</div>
+													</li><br>
 
-<li tabindex="0">
-                      <div class="site-footer__contact-label">MARTA Mobility</div>
-                      <div class="site-footer__contact-number">404-848-5826</div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="social-links">
-                  <ul class="social-links__items">
-                    <li class="social-links__item"> <a class="social-links__item-link social-links__item-link--tw" href="https://twitter.com/MARTASERVICE" title="”Service”" target="_blank" tabindex="0">MARTA Service</a> </li>
+													<li tabindex="0">
+														<div class="site-footer__contact-label">MARTA Mobility</div>
+														<div class="site-footer__contact-number">404-848-5826</div>
+													</li>
+												</ul>
+											</div>
+											<div class="social-links">
+												<ul class="social-links__items">
+													<li class="social-links__item"> <a class="social-links__item-link social-links__item-link--tw" href="https://twitter.com/MARTASERVICE" title="”Service”" target="_blank" tabindex="0">MARTA Service</a> </li>
 
- <li class="social-links__item"> <a class="social-links__item-link social-links__item-link--tw" href="https://twitter.com/CEOMARTA" title="”CEO”" target="_blank" tabindex="0">CEO</a> </li>
+													<li class="social-links__item"> <a class="social-links__item-link social-links__item-link--tw" href="https://twitter.com/CEOMARTA" title="”CEO”" target="_blank" tabindex="0">CEO</a> </li>
 
-                    <li class="social-links__item"> <a class="social-links__item-link social-links__item-link--fb" href="https://www.facebook.com/pages/MARTA/64214098113?v=wall" title="”Facebook" page”="" target="_blank" tabindex="0">Facebook</a> </li>
-                    <li class="social-links__item"> <a class="social-links__item-link social-links__item-link--ig" href="https://www.instagram.com/marta_explorer/" title="”Instagram" page”="" target="_blank" tabindex="0">Instagram</a> </li>
-                    <li class="social-links__item"> <a class="social-links__item-link social-links__item-link--li" href="https://www.linkedin.com/company/metropolitan-atlanta-rapid-transit-authority" title="”LinkedIN" page”="" target="_blank" tabindex="0">LinkedIn</a> </li>
-                    <li class="social-links__item"> <a class="social-links__item-link social-links__item-link--pt" href="https://www.pinterest.com/MARTATRANSIT/" title="”Pinterest" page”="" target="_blank" tabindex="0">Pinterest</a> </li>
-                    <li class="social-links__item"> <a class="social-links__item-link social-links__item-link--yt" href="https://www.youtube.com/user/itsmartanews?feature=mhum" title="”YouTube" page”="" target="_blank" tabindex="0">YouTube</a> </li>
-                  </ul>
-<div id="ctl00_ContentBlock5">
-	<table width="80%" border="0" align="center" cellpadding="4" cellspacing="0" dropzone="copy">
-    <tbody>
-        <tr>
-            <td colspan="6" style="cursor: default;" align="center">Select a Language:</td>    </tr>
-        <tr>
-            <td width="36" bordercolor="#333333" style="cursor: default;">
-                <a tabindex="0" href="http://translate.google.com/translate?u=http://www.itsmarta.com&amp;hl=en&amp;ie=UTF-8&amp;sl=en&amp;tl=es" title="Spanish" draggable="false">
-                    <img alt="Spanish" border="0" height="11" hspace="2" src="./MARTA_files/es.gif" width="20" draggable="false">                </a>            </td>
-            <td width="36" bordercolor="#333333" style="cursor: default;">
-                <a tabindex="0" href="http://translate.google.com/translate?u=http://www.itsmarta.com&amp;hl=en&amp;ie=UTF-8&amp;sl=en&amp;tl=fr" title="French" draggable="false">
-                    <img alt="French" border="0" height="11" hspace="2" src="./MARTA_files/fr.gif" width="20" draggable="false">                </a>            </td>
-            <td width="36" bordercolor="#333333">
-                <a tabindex="0" href="http://translate.google.com/translate?u=http://www.itsmarta.com&amp;hl=en&amp;ie=UTF-8&amp;sl=en&amp;tl=ja" title="Japanese" draggable="false">
-                    <img alt="Japanese" border="0" height="11" hspace="2" src="./MARTA_files/ja.gif" width="20" draggable="false">                </a>            </td>
-            <td width="36" bordercolor="#333333" style="cursor: default;">
-                <a tabindex="0" href="http://translate.google.com/translate?u=http://www.itsmarta.com&amp;hl=en&amp;ie=UTF-8&amp;sl=en&amp;tl=zh" title="Chinese" draggable="false">
-                    <img alt="Chinese" border="0" height="11" hspace="2" src="./MARTA_files/zh.gif" width="20" draggable="false">                </a>            </td>
-            <td width="36" bordercolor="#333333" style="cursor: default;">
-                <a tabindex="0" href="http://translate.google.com/translate?u=http://www.itsmarta.com&amp;hl=en&amp;ie=UTF-8&amp;sl=en&amp;tl=ko" title="Korean" draggable="false">
-                    <img alt="Korean" border="0" height="11" hspace="2" src="./MARTA_files/ko.gif" width="20" draggable="false">                </a>            </td>
-            <td width="47" bordercolor="#333333">
-                <a tabindex="0" href="http://translate.google.com/translate?u=http://www.itsmarta.com&amp;hl=en&amp;ie=UTF-8&amp;sl=en&amp;tl=de" title="German" draggable="false">
-                    <img alt="German" border="0" height="11" hspace="2" src="./MARTA_files/de.gif" width="20" draggable="false">                </a>            </td>    </tr>                       </tbody>
-</table>
-</div>
+													<li class="social-links__item"> <a class="social-links__item-link social-links__item-link--fb" href="https://www.facebook.com/pages/MARTA/64214098113?v=wall" title="”Facebook" page”="" target="_blank" tabindex="0">Facebook</a> </li>
+													<li class="social-links__item"> <a class="social-links__item-link social-links__item-link--ig" href="https://www.instagram.com/marta_explorer/" title="”Instagram" page”="" target="_blank" tabindex="0">Instagram</a> </li>
+													<li class="social-links__item"> <a class="social-links__item-link social-links__item-link--li" href="https://www.linkedin.com/company/metropolitan-atlanta-rapid-transit-authority" title="”LinkedIN" page”="" target="_blank" tabindex="0">LinkedIn</a> </li>
+													<li class="social-links__item"> <a class="social-links__item-link social-links__item-link--pt" href="https://www.pinterest.com/MARTATRANSIT/" title="”Pinterest" page”="" target="_blank" tabindex="0">Pinterest</a> </li>
+													<li class="social-links__item"> <a class="social-links__item-link social-links__item-link--yt" href="https://www.youtube.com/user/itsmartanews?feature=mhum" title="”YouTube" page”="" target="_blank" tabindex="0">YouTube</a> </li>
+												</ul>
+												<div id="ctl00_ContentBlock5">
+													<table width="80%" border="0" align="center" cellpadding="4" cellspacing="0" dropzone="copy">
+														<tbody>
+															<tr>
+																<td colspan="6" style="cursor: default;" align="center">Select a Language:</td>
+															</tr>
+															<tr>
+																<td width="36" bordercolor="#333333" style="cursor: default;">
+																	<a tabindex="0" href="http://translate.google.com/translate?u=http://www.itsmarta.com&amp;hl=en&amp;ie=UTF-8&amp;sl=en&amp;tl=es" title="Spanish" draggable="false">
+                    <img alt="Spanish" border="0" height="11" hspace="2" src="./MARTA_files/es.gif" width="20" draggable="false">                </a> </td>
+																<td width="36" bordercolor="#333333" style="cursor: default;">
+																	<a tabindex="0" href="http://translate.google.com/translate?u=http://www.itsmarta.com&amp;hl=en&amp;ie=UTF-8&amp;sl=en&amp;tl=fr" title="French" draggable="false">
+                    <img alt="French" border="0" height="11" hspace="2" src="./MARTA_files/fr.gif" width="20" draggable="false">                </a> </td>
+																<td width="36" bordercolor="#333333">
+																	<a tabindex="0" href="http://translate.google.com/translate?u=http://www.itsmarta.com&amp;hl=en&amp;ie=UTF-8&amp;sl=en&amp;tl=ja" title="Japanese" draggable="false">
+                    <img alt="Japanese" border="0" height="11" hspace="2" src="./MARTA_files/ja.gif" width="20" draggable="false">                </a> </td>
+																<td width="36" bordercolor="#333333" style="cursor: default;">
+																	<a tabindex="0" href="http://translate.google.com/translate?u=http://www.itsmarta.com&amp;hl=en&amp;ie=UTF-8&amp;sl=en&amp;tl=zh" title="Chinese" draggable="false">
+                    <img alt="Chinese" border="0" height="11" hspace="2" src="./MARTA_files/zh.gif" width="20" draggable="false">                </a> </td>
+																<td width="36" bordercolor="#333333" style="cursor: default;">
+																	<a tabindex="0" href="http://translate.google.com/translate?u=http://www.itsmarta.com&amp;hl=en&amp;ie=UTF-8&amp;sl=en&amp;tl=ko" title="Korean" draggable="false">
+                    <img alt="Korean" border="0" height="11" hspace="2" src="./MARTA_files/ko.gif" width="20" draggable="false">                </a> </td>
+																<td width="47" bordercolor="#333333">
+																	<a tabindex="0" href="http://translate.google.com/translate?u=http://www.itsmarta.com&amp;hl=en&amp;ie=UTF-8&amp;sl=en&amp;tl=de" title="German" draggable="false">
+                    <img alt="German" border="0" height="11" hspace="2" src="./MARTA_files/de.gif" width="20" draggable="false">                </a> </td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
 
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="site-footer__secondary">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="site-footer__secondary-nav">
-              <ul>
-                <li> <a href="http://itsmarta.com/privacy-and-legal.aspx" tabindex="0">Privacy and Legal</a> </li>
-              </ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="site-footer__secondary">
+						<div class="container">
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="site-footer__secondary-nav">
+										<ul>
+											<li> <a href="http://itsmarta.com/privacy-and-legal.aspx" tabindex="0">Privacy and Legal</a> </li>
+										</ul>
 
 
 
 
-</div>
-            </div>
-          </div>
-        </div>
-      </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-  </footer>
-  <!-- Footer Ending -->
-  <script src="./MARTA_files/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="scripts/vendor/jquery-1.11.1.min.js"></' + 'script>')</script>
-  <script src="./MARTA_files/jquery-ui.min.js"></script>
-  <script>window.jQuery || document.write('<script src="scripts/vendor/jquery-ui-1.11.4.min.js"><\/script>')</script>
-  <script src="./MARTA_files/vendor.js"></script>
-  <script src="./MARTA_files/includes.js"></script>
-  <script>
-        Modernizr.load([
-          {
-              test: window.matchMedia,
-              nope: ['scripts/vendor/matchMedia.min.js', 'scripts/vendor/matchMedia.addListener.min.js', 'scripts/vendor/respond.min.js']
-          },
-          'scripts/vendor/enquire.min.js',
-          './MARTA_files/main.js'
-        ]);
-    </script>
-  <!--Trip planner scripts -->
-  <!--[if lt IE 9]>
+				</footer>
+				<!-- Footer Ending -->
+				<script src="./MARTA_files/jquery.min.js"></script>
+				<script>
+					window.jQuery || document.write('<script src="scripts/vendor/jquery-1.11.1.min.js"></' + 'script>')
+				</script>
+				<script src="./MARTA_files/jquery-ui.min.js"></script>
+				<script>
+					window.jQuery || document.write('<script src="scripts/vendor/jquery-ui-1.11.4.min.js"><\/script>')
+				</script>
+				<script src="./MARTA_files/vendor.js"></script>
+				<script src="./MARTA_files/includes.js"></script>
+				<script>
+					Modernizr.load([{
+							test: window.matchMedia,
+							nope: ['scripts/vendor/matchMedia.min.js', 'scripts/vendor/matchMedia.addListener.min.js', 'scripts/vendor/respond.min.js']
+						},
+						'scripts/vendor/enquire.min.js',
+						'./MARTA_files/main.js'
+					]);
+				</script>
+				<!--Trip planner scripts -->
+				<!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.4/jquery.xdomainrequest.min.js"></script>
     <![endif]-->
-  <!-- Home Page TimePicker Begin-->
-  <link rel="stylesheet" href="./MARTA_files/jquery-ui-1.10.0.custom.min.css" type="text/css">
-  <link rel="stylesheet" href="./MARTA_files/jquery.ui.timepicker.css" type="text/css">
-  <script type="text/javascript" src="./MARTA_files/jquery.ui.timepicker.js"></script>
-  <script type="text/javascript">
-              $(document).ready(function () {
-                  $('#timepicker_6').timepicker({
-                      showPeriod: true,
-                      showLeadingZero: true
-                  });
-              });
-        </script>
-  <!-- Home Page TimePicker End-->
-  <!-- Mobile Version of left navigation-->
-  <script>
-              // DOM ready
-              $(function () {
+				<!-- Home Page TimePicker Begin-->
+				<link rel="stylesheet" href="./MARTA_files/jquery-ui-1.10.0.custom.min.css" type="text/css">
+				<link rel="stylesheet" href="./MARTA_files/jquery.ui.timepicker.css" type="text/css">
+				<script type="text/javascript" src="./MARTA_files/jquery.ui.timepicker.js"></script>
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$('#timepicker_6').timepicker({
+							showPeriod: true,
+							showLeadingZero: true
+						});
+					});
+				</script>
+				<!-- Home Page TimePicker End-->
+				<!-- Mobile Version of left navigation-->
+				<script>
+					// DOM ready
+					$(function() {
 
-                  // Create the dropdown base
-                  $("<select />").appendTo("nav");
+						// Create the dropdown base
+						$("<select />").appendTo("nav");
 
-                  // Create default option "Go to..."
-                  $("<option />", {
-                      "selected": "selected",
-                      "value": "",
-                      "text": "Go to..."
-                  }).appendTo("nav select");
+						// Create default option "Go to..."
+						$("<option />", {
+							"selected": "selected",
+							"value": "",
+							"text": "Go to..."
+						}).appendTo("nav select");
 
-                  // Populate dropdown with menu items
-                  $("nav a").each(function () {
-                      var el = $(this);
-                      $("<option />", {
-                          "value": el.attr("href"),
-                          "text": el.text()
-                      }).appendTo("nav select");
-                  });
+						// Populate dropdown with menu items
+						$("nav a").each(function() {
+							var el = $(this);
+							$("<option />", {
+								"value": el.attr("href"),
+								"text": el.text()
+							}).appendTo("nav select");
+						});
 
-                  // To make dropdown actually work
-                  // To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
-                  $("nav select").change(function () {
-                      window.location = $(this).find("option:selected").val();
-                  });
+						// To make dropdown actually work
+						// To make more unobtrusive: http://css-tricks.com/4064-unobtrusive-page-changer/
+						$("nav select").change(function() {
+							window.location = $(this).find("option:selected").val();
+						});
 
-              });
-	</script>
-  <!-- Station name link to station detail page David change-->
-  <script>
-        $('a.stations__item-name').click(function (e) {
-            var stationName = $(e.target).text();
-            switch (stationName) {
-                case 'Brookhaven / Oglethorpe':
-                    stationName = 'Brookhaven';
-                    break;
-                case 'Dome / Congress Center / Philips Arena / CNN':
-                    stationName = 'Omni';
-                    break;
+					});
+				</script>
+				<!-- Station name link to station detail page David change-->
+				<script>
+					$('a.stations__item-name').click(function(e) {
+						var stationName = $(e.target).text();
+						switch (stationName) {
+							case 'Brookhaven / Oglethorpe':
+								stationName = 'Brookhaven';
+								break;
+							case 'Dome / Congress Center / Philips Arena / CNN':
+								stationName = 'Omni';
+								break;
 
-                case 'Dome / GWCC / Philips Arena / CNN Center':
-                    stationName = 'Omni';
-                    break;
+							case 'Dome / GWCC / Philips Arena / CNN Center':
+								stationName = 'Omni';
+								break;
 
-                case 'Edgewood / Candler Park':
-                    stationName = 'Edgewood-Candler Park';
-                    break;
+							case 'Edgewood / Candler Park':
+								stationName = 'Edgewood-Candler Park';
+								break;
 
-                case 'Inman Park / Reynoldstown':
-                    stationName = 'Inman Park';
-                    break;
+							case 'Inman Park / Reynoldstown':
+								stationName = 'Inman Park';
+								break;
 
-                case 'Lakewood / Ft. McPherson':
-                    stationName = 'Lakewood';
-                    break;
-                case 'Lindbergh Center':
-                    stationName = 'Lindbergh';
-                    break;
-            }
-            //var stationUrl = "station-detail.aspx?station=" + stationName;
-            //$(e.target).attr("href", stationUrl);
-        });
+							case 'Lakewood / Ft. McPherson':
+								stationName = 'Lakewood';
+								break;
+							case 'Lindbergh Center':
+								stationName = 'Lindbergh';
+								break;
+						}
+						//var stationUrl = "station-detail.aspx?station=" + stationName;
+						//$(e.target).attr("href", stationUrl);
+					});
+				</script>
+				<script src="./MARTA_files/jquerycookie.js"></script>
 
-    </script>
-  <script src="./MARTA_files/jquerycookie.js"></script>
+				<script type="text/javascript">
+					//<![CDATA[
+					var Page_Validators = new Array(document.getElementById("ctl00_RequiredFieldValidator1"));
+					//]]>
+				</script>
 
-<script type="text/javascript">
-//<![CDATA[
-var Page_Validators =  new Array(document.getElementById("ctl00_RequiredFieldValidator1"));
-//]]>
-</script>
-
-<script type="text/javascript">
-//<![CDATA[
-var ctl00_RequiredFieldValidator1 = document.all ? document.all["ctl00_RequiredFieldValidator1"] : document.getElementById("ctl00_RequiredFieldValidator1");
-ctl00_RequiredFieldValidator1.controltovalidate = "ctl00_siteSearch";
-ctl00_RequiredFieldValidator1.errormessage = "Please enter search text";
-ctl00_RequiredFieldValidator1.display = "Dynamic";
-ctl00_RequiredFieldValidator1.validationGroup = "SearchGroup";
-ctl00_RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
-ctl00_RequiredFieldValidator1.initialvalue = "";
-//]]>
-</script>
+				<script type="text/javascript">
+					//<![CDATA[
+					var ctl00_RequiredFieldValidator1 = document.all ? document.all["ctl00_RequiredFieldValidator1"] : document.getElementById("ctl00_RequiredFieldValidator1");
+					ctl00_RequiredFieldValidator1.controltovalidate = "ctl00_siteSearch";
+					ctl00_RequiredFieldValidator1.errormessage = "Please enter search text";
+					ctl00_RequiredFieldValidator1.display = "Dynamic";
+					ctl00_RequiredFieldValidator1.validationGroup = "SearchGroup";
+					ctl00_RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+					ctl00_RequiredFieldValidator1.initialvalue = "";
+					//]]>
+				</script>
 
 
-<script type="text/javascript">
-//<![CDATA[
+				<script type="text/javascript">
+					//<![CDATA[
 
-var Page_ValidationActive = false;
-if (typeof(ValidatorOnLoad) == "function") {
-    ValidatorOnLoad();
-}
+					var Page_ValidationActive = false;
+					if (typeof(ValidatorOnLoad) == "function") {
+						ValidatorOnLoad();
+					}
 
-function ValidatorOnSubmit() {
-    if (Page_ValidationActive) {
-        return ValidatorCommonOnSubmit();
-    }
-    else {
-        return true;
-    }
-}
+					function ValidatorOnSubmit() {
+						if (Page_ValidationActive) {
+							return ValidatorCommonOnSubmit();
+						} else {
+							return true;
+						}
+					}
 
-document.getElementById('ctl00_RequiredFieldValidator1').dispose = function() {
-    Array.remove(Page_Validators, document.getElementById('ctl00_RequiredFieldValidator1'));
-}
-//]]>
-</script>
-</form>
+					document.getElementById('ctl00_RequiredFieldValidator1').dispose = function() {
+						Array.remove(Page_Validators, document.getElementById('ctl00_RequiredFieldValidator1'));
+					}
+					//]]>
+				</script>
+	</form>
 
-<div id="ui-timepicker-div" class="ui-timepicker ui-widget ui-helper-clearfix ui-corner-all " style="display: none"></div><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>
+	<div id="ui-timepicker-div" class="ui-timepicker ui-widget ui-helper-clearfix ui-corner-all " style="display: none"></div>
+	<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+</body>
+
+</html>
