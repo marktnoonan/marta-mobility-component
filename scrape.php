@@ -15,13 +15,11 @@ $currentTimeInMinutes = (intval($currentTime[0]) * 60) + intval($currentTime[1])
 
 // if UN and PW are set, and not equal to "test" or empty strings.
 if (isset($_POST['providedUsername']) && isset($_POST['providedPassword']) && $_POST['providedUsername'] !== '' && $_POST['providedPassword'] !== '' && strtolower($_POST['providedUsername']) !== 'test' && $_POST['providedPassword'] !== 'test') {
-    martaLogin();
-    $html = fetchMartaPage();
+    $html = martaLogin();
 } elseif (strtolower($_POST['providedUsername']) === 'test' && $_POST['providedPassword'] === 'test') { // fetch dummy data for test user Joanna M Customer
     $html = file_get_html('MARTAEXAMPLE.html');
 } else { // nothing posted
-  $html = file_get_html('MARTAEXAMPLE.html');
-  //exit("username or password is missing!");
+exit("username or password is missing!");
 }
 
 //$bookingsTable = $html->find('td[valign=top]', 4)->find('table',2)->plaintext;
@@ -137,11 +135,8 @@ function martaLogin()
     if(curl_errno($curl)){
         throw new Exception(curl_error($curl));
     }
-}
 
-function fetchMartaPage()
-{
-    //We should be logged in by now. Let's attempt to access a password protected page
+  //We should be logged in by now. Let's attempt to access a password protected page
     curl_setopt($curl, CURLOPT_URL, 'http://mobility.itsmarta.com/hiwire?.a=pViewTrips&.s=8ff56be8');
 
     //Use the same cookie file.
@@ -158,7 +153,6 @@ function fetchMartaPage()
     $html = str_get_html(curl_exec($curl));
     return $html;
 }
-
 
 
 function formatTime($time) {
