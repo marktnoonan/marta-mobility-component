@@ -319,7 +319,7 @@ function getDelayInMinutesDescription($delay)
     return "abs($delay) minutes before Ready Time.";
   } elseif ($delay == -1) {
     return "abs($delay) minute before Ready Time.";
-  } elseif ($delay < 0) {
+  } elseif ($delay == 0) {
     return "right on time.";
   }
 }
