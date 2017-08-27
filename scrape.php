@@ -256,10 +256,6 @@ function removePastBookings($arrayOfBookings)
 {
     global $currentDay, $currentTimeInMinutes;
 
-/*
-loop through $arrayOfBookings and find ones where date is today, and if the ETA
-is more than an hour old, remove the trip from the list.
- */
     foreach ($arrayOfBookings as &$booking) {
 
         $bookingEta = explode(":", $booking["eta"]);
@@ -275,11 +271,19 @@ is more than an hour old, remove the trip from the list.
         $booking["statusDescription"] = getStatusDescription($booking["delayInMinutes"]);
         $booking["statusColor"] = getStatusColor($booking["delayInMinutes"]);
 
-        if ($booking["date"] === $currentDay && (($bookingEtaInMinutes + 60) < $currentTimeInMinutes)) {
+
+
+        /*
+        loop through $arrayOfBookings and find ones where date is today, and if the ETA
+        is more than an hour old, remove the trip from the list.
+
+        (skipping this for now)
+         */
+        /*if ($booking["date"] === $currentDay && (($bookingEtaInMinutes + 60) < $currentTimeInMinutes)) {
 
             array_shift($arrayOfBookings);
 
-        }
+        }*/
 
 
 
