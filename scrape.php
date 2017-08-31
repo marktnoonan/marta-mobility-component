@@ -183,10 +183,12 @@ function datesAndTimes($arrayOfBookings, $datesAndTimes)
             $eta = substr($nugget, 35, 5);
             //using the preg_replace because the time is not always 5 chars long... eg 7:05 vs 10:05. But sometimes it is, so we need to catch 5 chars anyway. And just remove the line break char if we capture it.
             $eta = preg_replace("/\r/", "", $eta);
-            $eta = formatTime($eta);
-            $displayEta =  date("g:i A", strtotime($eta));
+            if (isset($eta) && $eta !== '') {
+              $eta = formatTime($eta);
+              $displayEta =  date("g:i A", strtotime($eta));
+              $arrayOfBookings[$i]["displayEta"] = $displayEta;
+            }
             $arrayOfBookings[$i]["eta"] = $eta;
-            $arrayOfBookings[$i]["displayEta"] = $displayEta;
             $arrayOfBookings[$i]["iteratorreadynugget"] = $i;
         } elseif (strpos($nugget, 'ate')) {
             $tripDate = substr($nugget, 6);
@@ -209,6 +211,7 @@ function datesAndTimes($arrayOfBookings, $datesAndTimes)
             $arrayOfBookings[$i]['readyTime'] = $readyTime;
             $arrayOfBookings[$i]["displayReadyTime"] = $displayReadyTime;
             $arrayOfBookings[$i]["iteratorreadyTime"] = $i;
+
         } elseif (strpos($nugget, 'nd Window')) {
             $formattedEndWindow = formatTime(substr($nugget, 12));
             $displayEndWindow =  date("g:i A", strtotime($formattedEndWindow));
@@ -218,6 +221,12 @@ function datesAndTimes($arrayOfBookings, $datesAndTimes)
             // this is awlays the last in the set we are looking for, so we increment $i here.
             //this plaintext has a trailing space, so we remove it.
             $status = preg_replace("/ /", "", substr($nugget, 17));
+            $arrayOfBookings[$i]["status"] = $status;
+            $i++;
+        } elseif (strpos($nugget, 'Cancelled')) {
+            // this is awlays the last in the set we are looking for, so we increment $i here.
+            //this plaintext has a trailing space, so we remove it.
+            $status = $nugget;
             $arrayOfBookings[$i]["status"] = $status;
             $i++;
         }
@@ -258,7 +267,12 @@ function removePastBookings($arrayOfBookings)
 
     foreach ($arrayOfBookings as &$booking) {
 
-        $bookingEta = explode(":", $booking["eta"]);
+        if (isset($booking["eta"])){
+          $bookingEta = explode(":", $booking["eta"]);
+        } else {
+          $booking["eta"] = $booking["readyTime"];
+          $bookingEta = explode(":", $booking["readyTime"]);
+        }
         $bookingEtaInMinutes = (intval($bookingEta[0]) * 60) + intval($bookingEta[1]);
         $endWindowInMinutesArr = explode(":", $booking["endWindow"]);
         $booking["endWindowInMinutes"] = (intval($endWindowInMinutesArr[0]) * 60) + intval($endWindowInMinutesArr[1]);
@@ -268,8 +282,8 @@ function removePastBookings($arrayOfBookings)
         $booking["etaInMinutes"] = $bookingEtaInMinutes;
         $booking["math"] = ($bookingEtaInMinutes + 60) < $currentTimeInMinutes;
         $booking["delayInMinutesDescription"] = getDelayInMinutesDescription($booking["delayInMinutes"]);
-        $booking["statusDescription"] = getStatusDescription($booking["delayInMinutes"]);
-        $booking["statusColor"] = getStatusColor($booking["delayInMinutes"]);
+        $booking["statusDescription"] = getStatusDescription($booking["delayInMinutes"], $booking["status"]);
+        $booking["statusColor"] = getStatusColor($booking["delayInMinutes"], $booking["status"]);
 
 
 
@@ -292,24 +306,33 @@ function removePastBookings($arrayOfBookings)
 }
 
 
-function getStatusColor($delay){
-  if ($delay > 30) {
-    return "red";
-  } elseif ($delay < 30) {
-    return "yellow";
-  } else {
-    return "green";
+function getStatusColor($delay, $status){
+
+  if ($status == 'Scheduled') {
+    if ($delay > 30) {
+      return "red";
+    } elseif ($delay < 30) {
+      return "yellow";
+    } else {
+      return "green";
+    }
+  } elseif (strpos($status, 'ancelled')){
+    return "blue";
   }
 }
 
 
-function getStatusDescription($delay){
-  if ($delay > 30) {
-    return ", running late.";
-  } elseif ($delay < 30) {
-    return ", arriving in window.";
+function getStatusDescription($delay, $status){
+  if ($status == 'Scheduled') {
+    if ($delay > 30) {
+      return ", running late.";
+    } elseif ($delay < 30) {
+      return ", arriving in window.";
+    } else {
+      return ", arriving on time.";
+    }
   } else {
-    return ", arriving on time.";
+    return "";
   }
 }
 
@@ -320,9 +343,9 @@ function getDelayInMinutesDescription($delay)
   } elseif ($delay == 1) {
     return "$delay minute after Ready Time.";
   } elseif ($delay < -1) {
-    return "abs($delay) minutes before Ready Time.";
+    return abs($delay) . " minutes before Ready Time.";
   } elseif ($delay == -1) {
-    return "abs($delay) minute before Ready Time.";
+    return abs($delay) . "minute before Ready Time.";
   } elseif ($delay == 0) {
     return "right on time.";
   }
