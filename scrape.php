@@ -221,12 +221,15 @@ function datesAndTimes($arrayOfBookings, $datesAndTimes)
             // this is awlays the last in the set we are looking for, so we increment $i here.
             //this plaintext has a trailing space, so we remove it.
             $status = preg_replace("/ /", "", substr($nugget, 17));
+            if ($status == "NotScheduled"){
+              $status = "Van not assigned.";
+            }
             $arrayOfBookings[$i]["status"] = $status;
             $i++;
         } elseif (strpos($nugget, 'Cancelled')) {
             // this is awlays the last in the set we are looking for, so we increment $i here.
             //this plaintext has a trailing space, so we remove it.
-            $status = $nugget;
+            $status = substr($nugget, 8);
             $arrayOfBookings[$i]["status"] = $status;
             $i++;
         }
@@ -311,7 +314,7 @@ function getStatusColor($delay, $status){
   if ($status == 'Scheduled') {
     if ($delay > 30) {
       return "red";
-    } elseif ($delay < 30) {
+    } elseif ($delay < 30 && $delay > 0) {
       return "yellow";
     } else {
       return "green";
@@ -326,7 +329,7 @@ function getStatusDescription($delay, $status){
   if ($status == 'Scheduled') {
     if ($delay > 30) {
       return ", running late.";
-    } elseif ($delay < 30) {
+    } elseif ($delay < 30 && $delay > 0) {
       return ", arriving in window.";
     } else {
       return ", arriving on time.";
