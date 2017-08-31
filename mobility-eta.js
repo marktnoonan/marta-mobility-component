@@ -14,6 +14,7 @@ var loginDetails = [];
 
 //window.onload = init;
 
+// moved init to an iife - waiting on big bg image to load was block execution.
 (function init() {
   addLogInScreen();
   addLogInListeners();
@@ -40,13 +41,13 @@ function addLogInScreen() {
 function addLogInListeners() {
   console.log("added");
   var usernameInput =
-  document.querySelector('input[name=providedUsername]');
+    document.querySelector('input[name=providedUsername]');
   var passwordInput = document.querySelector('input[name=providedPassword]');
 
   document.querySelector('#login').addEventListener('click', function() {
     var username = usernameInput.value;
     var password = passwordInput.value;
-    console.log(username,password);
+    console.log(username, password);
     showInfo(username, password);
 
   });
@@ -55,7 +56,7 @@ function addLogInListeners() {
     if (event.keyCode == 13) {
       var username = usernameInput.value;
       var password = passwordInput.value;
-        console.log(username,password);
+      console.log(username, password);
       showInfo(username, password);
 
     }
@@ -107,11 +108,11 @@ function showTrips() {
       booking.displayEndWindow +
       '</span><br>&nbsp;▼</div></div> <div class="outer" style="text-align: left; width: 240px; background-color: #111; border-radius: 10px; overflow: hidden;"> <div class="inner" style="height: 18px; background-color: #595; background: linear-gradient(to right, #595 0%, #ee5 50%, #f55 80%);"> <span class="eta label" style="position: relative;display: inline-block;box-sizing: border-box;height: 100%;padding-top: 5px;text-align: left;transform: translateY(-5px);" aria-hidden="true"><img src="assets/martabus.png" id="martabus" style="height: 18px; display: inline; padding: 0 5px"/></span> </div> </div> <div class="eta-tooltip" style="width: auto;text-align: left;"> &nbsp;▲<br><span class="tool-tip" style="background-color: #fff;color: #000;border-radius: 3px;display: inline-block;padding: 3px;transform: translateY(-6px); line-height:1.2"><b>Your ETA</b><br>' + (booking.displayEta || "No ETA yet") + '</span></div></div>';
 
-      if (booking.status === "Scheduled"){
+    if (booking.status === "Scheduled") {
       htmlBuffer += '<span class="eta-wrapper" style="padding-top: 2px; display: inline-block; font-size: 14px; line-height: 1.3">Bus expected at <b>' + (booking.displayEta || "No ETA yet") + '</b>,<br>' + (booking.delayInMinutesDescription || "") + '</span>';
-      }
+    }
 
-      htmlBuffer += '<div class="ready-time-gage" style="text-align: left"><hr style="border: 1px solid #fff;"><div><b>Pick Up</b><Br>' + booking.pickupAddress +
+    htmlBuffer += '<div class="ready-time-gage" style="text-align: left"><hr style="border: 1px solid #fff;"><div><b>Pick Up</b><Br>' + booking.pickupAddress +
       '<br><Br><b>Drop Off</b><br>' + booking.dropOffAddress +
       '</div><br>' + '</div></div><br>';
 
