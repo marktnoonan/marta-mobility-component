@@ -27,7 +27,7 @@ function showInfo(username, password) {
   getTrips(username, password).then(
     function() {
       showTrips();
-      setMarker();
+      setMarkers();
     }
   )
 }
@@ -102,11 +102,11 @@ function showTrips() {
       '</span> | <span><b>Ready Time</b>: ' + booking.displayReadyTime +
       '</span></div><hr style="border: 1px solid #fff;"><div class="booking-status" style="margin-top: 8px; margin-bottom: 7px;"><span style="font-weight:bold; font-size: 16px;">Trip Status</span><br> <span class="late-status" style="color:' +
       etaColors[booking.statusColor] + '">' + booking.status + (booking.statusDescription || "") + '</span></div>' +
-      '<div class="progress-wrapper" style="display: none;font-size: 12px; "> <div class="labels" style="padding-top: 3px; text-align: left; line-height: 1.2; margin-left: -6px;"> <div class="label left" style="width: auto;text-align: left;display: inline-block;padding: 0;"> <span class="tool-tip" style="background-color: #fff;color: #000;border-radius: 3px;display: inline-block;padding: 3px;margin-bottom: -2px;"><b>Start Window</b><br>' +
+      '<div class="progress-wrapper' + i + '" style="display: none;font-size: 12px; "> <div class="labels" style="padding-top: 3px; text-align: left; line-height: 1.2; margin-left: -6px;"> <div class="label left" style="width: auto;text-align: left;display: inline-block;padding: 0;"> <span class="tool-tip" style="background-color: #fff;color: #000;border-radius: 3px;display: inline-block;padding: 3px;margin-bottom: -2px;"><b>Start Window</b><br>' +
       booking.displayReadyTime +
       '</span><br>&nbsp;▼</div> <div class="label center" style="width: auto;text-align: left;display: inline-block;transform: translateX(45px);padding: 0"><span class="tool-tip" style="background-color: #fff;color: #000;border-radius: 3px;display: inline-block;padding: 3px;margin-bottom: -2px;"><b>End Window</b><br>' +
       booking.displayEndWindow +
-      '</span><br>&nbsp;▼</div></div> <div class="outer" style="text-align: left; width: 240px; background-color: #111; border-radius: 10px; overflow: hidden;"> <div class="inner" style="height: 26px; background-color: #595; background: linear-gradient(to right, #595 0%, #ee5 50%, #f55 80%);"> <span class="eta label" style="position: relative;display: inline-block;box-sizing: border-box;height: 100%;padding-top: 5px;text-align: left;transform: translateY(-5px);" aria-hidden="true"><img src="assets/bus.png" id="martabus' + i + '" style="height: 26px; display: inline; padding: 0 5px 0 0"/></span> </div> </div> <div class="eta-tooltip" style="width: auto;text-align: left;"> &nbsp;▲<br><span class="tool-tip" style="background-color: #fff;color: #000;border-radius: 3px;display: inline-block;padding: 3px;transform: translateY(-6px); line-height:1.2"><b>Your ETA</b><br>' + (booking.displayEta || "No ETA yet") + '</span></div></div>';
+      '</span><br>&nbsp;▼</div></div> <div class="outer" style="text-align: left; width: 240px; background-color: #111; border-radius: 10px; overflow: hidden;"> <div class="inner" style="height: 26px; background-color: #595; background: linear-gradient(to right, #595 0%, #ee5 50%, #f55 80%);"> <span class="eta label" style="position: relative;display: inline-block;box-sizing: border-box;height: 100%;padding-top: 5px;text-align: left;transform: translateY(-5px);" aria-hidden="true"><img src="assets/bus.png" id="martabus' + i + '" style="height: 26px; display: inline; padding: 0 5px 0 0"/></span> </div> </div> <div class="eta-tooltip' + i + '" style="width: auto;text-align: left;"> &nbsp;▲<br><span class="tool-tip" style="background-color: #fff;color: #000;border-radius: 3px;display: inline-block;padding: 3px;transform: translateY(-6px); line-height:1.2"><b>Your ETA</b><br>' + (booking.displayEta || "No ETA yet") + '</span></div></div>';
 
     if (booking.status === "Scheduled") {
       htmlBuffer += '<span class="eta-wrapper" style="padding-top: 2px; display: inline-block; font-size: 14px; line-height: 1.3">Bus expected at <b>' + (booking.displayEta || "No ETA yet") + '</b>,<br>' + (booking.delayInMinutesDescription || "") + '</span>';
@@ -124,38 +124,42 @@ function showTrips() {
   document.querySelector('#mobility-eta').innerHTML = htmlBuffer;
 }
 
-function setMarker() {
+function setMarkers() {
 
-  /*
-  to set these markers for every trip, we would need to pass
-  in the relevant delayInMinutes and specify the target image
-  and tooltip that we are moving.
+  bookings.forEach(function(booking, i) {
 
-  we could call this function for every booking that is Scheduled and takes place Today?
-  */
+    if (booking.status === "Scheduled") {
+      setMarker(booking);
+    }
 
-  var lateMins = bookings[0].delayInMinutes;
-  var markerNumber = lateMins * 4;
-  var markerDistance = markerNumber;
-  var remainingDistance = 0;
-  var borderStyle = " solid rgba(100,100,100,0.5)";
+    function setMarker(booking) {
+      var marker = document.querySelector("#martabus" + i);
+      var tooltip = document.querySelector(".eta-tooltip" + i);
+      var progressWrapper = document.querySelector(".progress-wrapper" + i);
 
-  // to account for being very late.
-  if (markerDistance < 234) {
-    markerDistance += "px";
-    remainingDistance = (240 - markerNumber - 28) + "px";
-  } else {
-    markerDistance = "220" + "px";
-  }
+      var lateMins = booking.delayInMinutes;
+      var markerNumber = lateMins * 4;
+      var markerDistance = markerNumber;
+      var remainingDistance = 0;
+      var borderStyle = " solid rgba(100,100,100,0.5)";
 
-  document.querySelector("#martabus0").style.borderLeft = markerDistance + borderStyle;
-  document.querySelector("#martabus0").style.borderRight = remainingDistance + borderStyle;
-  document.querySelector(".eta-tooltip").style.marginLeft = (markerNumber - 8) + "px";
+      // to account for being very late.
+      if (markerDistance < 234) {
+        markerDistance += "px";
+        remainingDistance = (240 - markerNumber - 28) + "px";
+      } else {
+        markerDistance = "220" + "px";
+      }
 
-  document.querySelector(".progress-wrapper").style.display = "inline-block";
-  //the last line is just a quick hack to only show this on the first trip.
+      marker.style.borderLeft = markerDistance + borderStyle;
+      marker.style.borderRight = remainingDistance + borderStyle;
+      tooltip.style.marginLeft = (markerNumber - 8) + "px";
+      progressWrapper.style.display = "inline-block";
 
-  //TODO: create proper templates for each trip category (Future, Past, Active, Cancelled)
+    }
+
+  });
+
 
 
 }
