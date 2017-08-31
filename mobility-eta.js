@@ -140,7 +140,7 @@ function setMarker() {
   // to account for being very late.
   if (markerDistance < 234) {
     markerDistance += "px";
-    remainingDistance = (240 - markerNumber - 28) + "px";
+    remainingDistance = (220 - markerNumber - 28) + "px";
   } else {
     markerDistance = "234" + "px";
   }
