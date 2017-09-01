@@ -106,10 +106,10 @@ function showTrips() {
       booking.displayReadyTime +
       '</span><br>&nbsp;▼</div> <div class="label center" style="width: auto;text-align: left;display: inline-block;transform: translateX(45px);padding: 0"><span class="tool-tip" style="background-color: #fff;color: #000;border-radius: 3px;display: inline-block;padding: 3px;margin-bottom: -2px;"><b>End Window</b><br>' +
       booking.displayEndWindow +
-      '</span><br>&nbsp;▼</div></div> <div class="outer" style="text-align: left; width: 240px; background-color: #111; border-radius: 10px; overflow: hidden;"> <div class="inner" style="height: 26px; background-color: #595; background: linear-gradient(to right, #595 0%, #ee5 50%, #f55 80%);"> <span class="eta label" style="position: relative;display: inline-block;box-sizing: border-box;height: 100%;padding-top: 5px;text-align: left;transform: translateY(-5px);" aria-hidden="true"><img src="assets/bus.png" id="martabus' + i + '" style="height: 26px; display: inline; padding: 0 5px 0 0"/></span> </div> </div> <div class="eta-tooltip' + i + '" style="width: auto;text-align: left;"> &nbsp;▲<br><span class="tool-tip" style="background-color: #fff;color: #000;border-radius: 3px;display: inline-block;padding: 3px;transform: translateY(-6px); line-height:1.2"><b>Your ETA</b><br>' + (booking.displayEta || "No ETA yet") + '</span></div></div>';
+      '</span><br>&nbsp;▼</div></div> <div class="outer" style="text-align: left; width: 240px; background-color: #111; border-radius: 10px; overflow: hidden;"> <div class="inner" style="height: 26px; background-color: #595; background: linear-gradient(to right, #595 0%, #ee5 50%, #f55 80%);"> <span class="eta label" style="position: relative;display: inline-block;box-sizing: border-box;height: 100%;padding-top: 5px;text-align: left;transform: translateY(-5px);" aria-hidden="true"><img src="assets/bus.png" id="martabus' + i + '" style="height: 26px; display: inline; padding: 0 5px 0 0"/></span> </div> </div> <div class="eta-tooltip' + i + '" style="width: auto;text-align: left; position:absolute;"> &nbsp;▲<br><span class="tool-tip" style="background-color: #fff;color: #000;border-radius: 3px;display: inline-block;padding: 3px;transform: translateY(-6px); line-height:1.2"><b>Your ETA</b><br>' + (booking.displayEta || "No ETA yet") + '</span></div></div>';
 
     if (booking.status === "Scheduled") {
-      htmlBuffer += '<span class="eta-wrapper" style="padding-top: 2px; display: inline-block; font-size: 14px; line-height: 1.3">Bus expected at <b>' + (booking.displayEta || "No ETA yet") + '</b>,<br>' + (booking.delayInMinutesDescription || "") + '</span>';
+      htmlBuffer += '<span class="eta-wrapper" style="margin-top: 44px; display: inline-block; font-size: 14px; line-height: 1.3">Bus expected at <b>' + (booking.displayEta || "No ETA yet") + '</b>,<br>' + (booking.delayInMinutesDescription || "") + '</span>';
     }
 
     htmlBuffer += '<div class="ready-time-gage" style="text-align: left"><hr style="border: 1px solid #fff;"><div><b>Pick Up</b><Br>' + booking.pickupAddress +
@@ -136,10 +136,11 @@ function setMarkers() {
       var marker = document.querySelector("#martabus" + i);
       var tooltip = document.querySelector(".eta-tooltip" + i);
       var progressWrapper = document.querySelector(".progress-wrapper" + i);
-
+      // TODO: tidy up these variable names
       var lateMins = booking.delayInMinutes;
       var markerNumber = lateMins * 4;
       var markerDistance = markerNumber;
+      var tooltipMargin = 0;
       var remainingDistance = 0;
       var borderStyle = " solid rgba(100,100,100,0.5)";
 
@@ -151,9 +152,20 @@ function setMarkers() {
         markerDistance = "220" + "px";
       }
 
+      //to manage marker boundaries
+      if (markerNumber < -16){
+        tooltipMargin = "-16px";
+      } else if (markerNumber > 215) {
+        tooltipMargin = "216px";
+      } else {
+        tooltipMargin = (markerNumber - 8) + "px";
+      }
+
       marker.style.borderLeft = markerDistance + borderStyle;
       marker.style.borderRight = remainingDistance + borderStyle;
-      tooltip.style.marginLeft = (markerNumber - 8) + "px";
+
+      tooltip.style.marginLeft = tooltipMargin;
+
       progressWrapper.style.display = "inline-block";
 
     }
