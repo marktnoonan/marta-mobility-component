@@ -2,7 +2,8 @@ var etaColors = {
   yellow: "#EFE455",
   green: "#8AB755",
   red: "#FC7455",
-  blue: "#00BBE5"
+  blue: "#00BBE5",
+  orange: "#F79044"
 }
 
 var statusColor;
@@ -21,7 +22,7 @@ var loginDetails = [];
 })();
 
 function showInfo(username, password) {
-  showSpinner(".form-wrapper");
+  showSpinner();
   loginDetails[0] = username;
   loginDetails[1] = password;
   getTrips(username, password).then(
@@ -174,7 +175,7 @@ function setMarkers() {
 }
 
 
-function showSpinner(targetSelector) {
+function showSpinner() {
   var spinner = '<style>@-webkit-keyframes sweep { to { -webkit-transform: rotate(360deg); } }</style><div id="spinner" style="width: 50px; height: 50px; -webkit-animation: sweep 1s infinite linear; border-radius: 75px; border-bottom: 5px solid #00bbe5; margin: 50px auto"></div><div style="margin-top: 20px">Loading your trips...</div>'
-  document.querySelector(targetSelector).innerHTML = spinner;
+  document.querySelector("#mobility-eta").innerHTML = spinner;
 }

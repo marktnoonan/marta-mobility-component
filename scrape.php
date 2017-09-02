@@ -232,7 +232,13 @@ function datesAndTimes($arrayOfBookings, $datesAndTimes)
             $status = substr($nugget, 8);
             $arrayOfBookings[$i]["status"] = $status;
             $i++;
+        }elseif (strpos($nugget, 'o-Show')) {
+            // this is awlays the last in the set we are looking for, so we increment $i here.
+              $status = substr($nugget, 7);
+            $arrayOfBookings[$i]["status"] = "! $status !";
+            $i++;
         }
+
 
     }
     return $arrayOfBookings;
@@ -321,6 +327,8 @@ function getStatusColor($delay, $status){
     }
   } elseif (strpos($status, 'ancelled')){
     return "blue";
+  } elseif (strpos($status, 'No-Show')){
+    return "orange";
   }
 }
 
