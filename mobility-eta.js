@@ -21,7 +21,7 @@ var loginDetails = [];
 })();
 
 function showInfo(username, password) {
-  console.log("SHOW SPINNER")
+  showSpinner(".form-wrapper");
   loginDetails[0] = username;
   loginDetails[1] = password;
   getTrips(username, password).then(
@@ -35,7 +35,7 @@ function showInfo(username, password) {
 
 function addLogInScreen() {
   document.querySelector("#mobility-eta").innerHTML =
-    '<div class="form-wrapper" style="text-align:center; margin-top: 20px; margin-bottom: 40px"><form class="" id="unpw-form" method="post"> <h1 style="margin-bottom: 40px;"> Log In </h1> <input type="text" name="providedUsername" value="" placeholder="Client ID" style="font-size:18px; padding: 3px"> <br><br> <input type="password" name="providedPassword" id="pw" value="" placeholder="Password" style="font-size:18px; padding: 3px"> <br><br><br> </form> <button type="button" id="login" style="font-size:18px; padding: 20px">Check My Trips</button><div id="output"><br><br><br> If you do not know your Client ID or Password, you can call Reservations at (404) 848-5826.<br><br> For a demo, enter username <b>test</b> and password <b>test</b>. Contact markthomasnoonan@gmail.com with questions or feedback. </div></div> </div>'
+    '<div class="form-wrapper" style="text-align:center; margin-top: 20px; margin-bottom: 40px; height: 545px"><form class="" id="unpw-form" method="post"> <h1 style="margin-bottom: 40px;"> Log In </h1> <input type="text" name="providedUsername" value="" placeholder="Client ID" style="font-size:18px; padding: 3px"> <br><br> <input type="password" name="providedPassword" id="pw" value="" placeholder="Password" style="font-size:18px; padding: 3px"> <br><br><br> </form> <button type="button" id="login" style="font-size:18px; padding: 20px">Check My Trips</button><div id="output"><br><br><br> If you do not know your Client ID or Password, you can call Reservations at (404) 848-5826.<br><br> For a demo, enter username <b>test</b> and password <b>test</b>. Contact markthomasnoonan@gmail.com with questions or feedback. </div></div> </div>'
 }
 
 function addLogInListeners() {
@@ -89,10 +89,9 @@ function handleMartaData(xhrResponse) {
 }
 
 
-
 function showTrips() {
   var htmlBuffer =
-    '<div class="bookings-wrapper" style="display: inline-block;padding:20px;font-size: 14px;text-align: center;font-family: sans-serif;"><div class="client-info text-align-center"> Hi, <b>' +
+    '<div class="bookings-wrapper" style="display: inline-block;font-size: 14px;text-align: center;font-family: sans-serif;"><div class="client-info text-align-center"> Hi, <b>' +
     clientName + '</b>    </div>' + '<h1>Your Bookings</h1>';
 
   bookings.forEach(function(booking, i) {
@@ -172,6 +171,10 @@ function setMarkers() {
 
   });
 
+}
 
 
+function showSpinner(targetSelector) {
+  var spinner = '<style>@-webkit-keyframes sweep { to { -webkit-transform: rotate(360deg); } }</style><div id="spinner" style="width: 50px; height: 50px; -webkit-animation: sweep 1s infinite linear; border-radius: 75px; border-bottom: 5px solid #00bbe5; margin: 50px auto"></div><div style="margin-top: 20px">Loading your trips...</div>'
+  document.querySelector(targetSelector).innerHTML = spinner;
 }
