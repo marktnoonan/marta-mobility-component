@@ -128,7 +128,6 @@
   function setMarkers() {
 
     bookings.forEach(function(booking, i) {
-
       if (booking.status === "Scheduled") {
         setMarker(booking);
       }
@@ -137,10 +136,9 @@
         var marker = document.querySelector("#martabus" + i);
         var tooltip = document.querySelector(".eta-tooltip" + i);
         var progressWrapper = document.querySelector(".progress-wrapper" + i);
-        // TODO: tidy up these variable names
         var lateMins = booking.delayInMinutes;
-        var markerNumber = lateMins * 4;
-        var markerDistance = markerNumber;
+        var markerPixels = lateMins * 4;
+        var markerDistance = markerPixels;
         var tooltipMargin = 0;
         var remainingDistance = 0;
         var borderStyle = " solid rgba(100,100,100,0.5)";
@@ -148,31 +146,27 @@
         // to account for being very late.
         if (markerDistance < 234) {
           markerDistance += "px";
-          remainingDistance = (240 - markerNumber - 28) + "px";
+          remainingDistance = (240 - markerPixels - 28) + "px";
         } else {
           markerDistance = "220" + "px";
         }
 
         //to manage marker boundaries
-        if (markerNumber < -16) {
+        if (markerPixels < -16) {
           tooltipMargin = "-16px";
-        } else if (markerNumber > 215) {
+        } else if (markerPixels > 215) {
           tooltipMargin = "216px";
         } else {
-          tooltipMargin = (markerNumber - 8) + "px";
+          tooltipMargin = (markerPixels - 8) + "px";
         }
 
+        // position everything
         marker.style.borderLeft = markerDistance + borderStyle;
         marker.style.borderRight = remainingDistance + borderStyle;
-
         tooltip.style.marginLeft = tooltipMargin;
-
         progressWrapper.style.display = "inline-block";
-
       }
-
     });
-
   }
 
 
