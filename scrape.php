@@ -58,12 +58,9 @@ $locations = $html->find('td[width=5]');
 $arrayOfBookings = locations($arrayOfBookings, $locations);
 
 $arrayOfBookings = removePastBookings($arrayOfBookings);
-// so we actually CAN get the latlong, though it is buried deeply within this hidden form field.
-// I will have to write a parser function. TODO
-$latLongForFirstPickup = $html->find("input[name=PickUpAddress]", 1);
-$latLongForFirstPickup = getLatLong($latLongForFirstPickup);
+
 $json = [
-    (object) ['clientName' => strip_tags($customerInfo->plaintext), 'bookings' => $arrayOfBookings, 'Pick Up location data' => $latLongForFirstPickup, 'Pickup Long' => $latLongForFirstPickup, 'updatedAt' => date('g:i A'), "Past trip found" => $pastTripInDom]
+    (object) ['clientName' => strip_tags($customerInfo->plaintext), 'bookings' => $arrayOfBookings, 'updatedAt' => date('g:i A'), "Past trip found" => $pastTripInDom]
     ];
 header('Content-type:application/json');
 echo json_encode($json);
@@ -363,12 +360,4 @@ function getDelayInMinutesDescription($delay)
 }
 
 
-
-function getLatLong($latLong)
-{
-    $latLong = $latLong->value;
-    $latLong = explode(";", $latLong);
-    $firstPickupLong = substr($latLong[2], 2);
-    return $firstPickupLong;
-}
 ?>
