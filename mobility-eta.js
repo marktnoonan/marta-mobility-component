@@ -19,8 +19,7 @@
 
   function showInfo(username, password) {
     showSpinner();
-    loginDetails[0] = username;
-    loginDetails[1] = password;
+    loginDetails = [username, password];
     getTrips(username, password).then(
       function() {
         showTrips();
@@ -32,7 +31,7 @@
 
   function addLogInScreen() {
     document.querySelector("#mobility-eta").innerHTML =
-      '<div class="form-wrapper" style="text-align:center; margin-top: 20px; margin-bottom: 40px;"><form class="" id="unpw-form" method="post"> <h1 style="margin-bottom: 40px;"> Log In </h1> <input type="text" name="providedUsername" value="" placeholder="Client ID" style="font-size:18px; padding: 3px"> <br><br> <input type="password" name="providedPassword" id="pw" value="" placeholder="Password" style="font-size:18px; padding: 3px"> <br><br><br> </form> <button type="button" id="login" style="background-color: #333; border: 2px solid #333; color: #fff; display: inline-block; font-size: 14px; font-weight: 700; line-height: 1.2; padding: 11px 20px; position: relative;">Check My Trips</button><div id="output"><br><span style="color:' + etaColors.red + '">WARNING: This is site is in a pilot mode. Some errors may still exist. If trip information is unclear or looks wrong, you may confirm with MARTA Mobility ETA by phone: 404-848-4212.</span><br><br> If you do not know your Client ID or Password, you can call Reservations at (404) 848-5826.<br><br> For a demo, enter username <b>test</b> and password <b>test</b>. Contact markthomasnoonan@gmail.com with questions or feedback. </div></div> </div>'
+      '<div class="form-wrapper" style="text-align:center; margin-top: 20px; margin-bottom: 40px;"><form class="" id="unpw-form" method="post"> <h1 style="margin-bottom: 40px;"> Log In </h1> <input type="text" name="providedUsername" value="" placeholder="Client ID" style="font-size:18px; padding: 3px"> <br><br> <input type="password" name="providedPassword" id="pw" value="" placeholder="Password" style="font-size:18px; padding: 3px"> <br><br><br> </form> <button type="button" id="login" style="background-color: #333; border: 2px solid #333; color: #fff; display: inline-block; font-size: 14px; font-weight: 700; line-height: 1.2; padding: 11px 20px; position: relative; cursor: pointer;">Check My Trips</button><div id="output"><br><span style="color:' + etaColors.red + '">WARNING: This is site is in a pilot mode. Some errors may still exist. If trip information is unclear or looks wrong, you may confirm with MARTA Mobility ETA by phone: 404-848-4212.</span><br><br> If you do not know your Client ID or Password, you can call Reservations at (404) 848-5826.<br><br> For a demo, enter username <b>test</b> and password <b>test</b>. Contact markthomasnoonan@gmail.com with questions or feedback. </div></div> </div>'
   }
 
   function addLogInListeners() {
@@ -89,7 +88,7 @@
   function showTrips() {
     var htmlBuffer =
       '<div class="bookings-wrapper" style="display: inline-block;font-size: 14px;text-align: center;font-family: sans-serif;"><div class="client-info text-align-center"> Hi, <b>' +
-      clientName + '!</b> </div><br><h1>Your Bookings</h1><div style="margin-top: 5px">Checked at ' + checkedTime + '. <input type="button" id="refresh-button" value="Refresh" style="background-color: #333;border: 2px solid #333;color: #fff;display: inline-block;font-size: 14px;font-weight: 700;line-height: 1.2;padding: 3px 10px;position: relative;"></input></div>';
+      clientName + '!</b> </div><br><h1>Your Bookings</h1><div style="margin-top: 5px">Checked at ' + checkedTime + '. <input type="button" id="refresh-button" value="Refresh" style="background-color: #333;border: 2px solid #333;color: #fff;display: inline-block;font-size: 14px;font-weight: 700;line-height: 1.2;padding: 3px 10px;position: relative; cursor: pointer"></input></div>';
 
     bookings.forEach(function(booking, i) {
       htmlBuffer +=
