@@ -30,6 +30,7 @@
       function() {
         showTrips();
         setMarkers();
+        addRefreshListener();
       }
     )
   }
@@ -37,11 +38,10 @@
 
   function addLogInScreen() {
     document.querySelector("#mobility-eta").innerHTML =
-      '<div class="form-wrapper" style="text-align:center; margin-top: 20px; margin-bottom: 40px; height: 545px"><form class="" id="unpw-form" method="post"> <h1 style="margin-bottom: 40px;"> Log In </h1> <input type="text" name="providedUsername" value="" placeholder="Client ID" style="font-size:18px; padding: 3px"> <br><br> <input type="password" name="providedPassword" id="pw" value="" placeholder="Password" style="font-size:18px; padding: 3px"> <br><br><br> </form> <button type="button" id="login" style="font-size:18px; padding: 20px">Check My Trips</button><div id="output"><br><br><br> If you do not know your Client ID or Password, you can call Reservations at (404) 848-5826.<br><br> For a demo, enter username <b>test</b> and password <b>test</b>. Contact markthomasnoonan@gmail.com with questions or feedback. </div></div> </div>'
+      '<div class="form-wrapper" style="text-align:center; margin-top: 20px; margin-bottom: 40px; height: 545px"><form class="" id="unpw-form" method="post"> <h1 style="margin-bottom: 40px;"> Log In </h1> <input type="text" name="providedUsername" value="" placeholder="Client ID" style="font-size:18px; padding: 3px"> <br><br> <input type="password" name="providedPassword" id="pw" value="" placeholder="Password" style="font-size:18px; padding: 3px"> <br><br><br> </form> <button type="button" id="login" style="background-color: #333; border: 2px solid #333; color: #fff; display: inline-block; font-size: 14px; font-weight: 700; line-height: 1.2; padding: 11px 20px; position: relative;">Check My Trips</button><div id="output"><br><br><br> If you do not know your Client ID or Password, you can call Reservations at (404) 848-5826.<br><br> For a demo, enter username <b>test</b> and password <b>test</b>. Contact markthomasnoonan@gmail.com with questions or feedback. </div></div> </div>'
   }
 
   function addLogInListeners() {
-    console.log("added");
     var usernameInput =
       document.querySelector('input[name=providedUsername]');
     var passwordInput = document.querySelector('input[name=providedPassword]');
@@ -51,24 +51,26 @@
       var password = passwordInput.value;
       console.log(username, password);
       showInfo(username, password);
-
     });
 
     document.querySelector('#pw').addEventListener('keyup', function(event) {
       if (event.keyCode == 13) {
         var username = usernameInput.value;
         var password = passwordInput.value;
-        console.log(username, password);
         showInfo(username, password);
-
       }
     });
   }
 
+  function addRefreshListener() {
+    var refreshButton = document.querySelector("#refresh-button");
+    refreshButton.addEventListener("click", function(){
+      showInfo(loginDetails[0], loginDetails[1]);
+    });
+  }
+
   function getTrips(username, password) {
-
     return new Promise(function(resolve, reject) {
-
       var xhr = new XMLHttpRequest();
       xhr.open('POST', "scrape.php", true);
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -86,15 +88,14 @@
   function handleMartaData(xhrResponse) {
     martaResponse = JSON.parse(xhrResponse);
     bookings = martaResponse[0].bookings;
-    console.log(bookings);
     clientName = martaResponse[0].clientName;
+    checkedTime = martaResponse[0].updatedAt;
   }
-
 
   function showTrips() {
     var htmlBuffer =
       '<div class="bookings-wrapper" style="display: inline-block;font-size: 14px;text-align: center;font-family: sans-serif;"><div class="client-info text-align-center"> Hi, <b>' +
-      clientName + '</b>    </div>' + '<h1>Your Bookings</h1>';
+      clientName + '!</b> </div><br><h1>Your Bookings</h1><div style="margin-top: 5px">Checked at ' + checkedTime + '. <input type="button" id="refresh-button" value="Refresh" style="background-color: #333;border: 2px solid #333;color: #fff;display: inline-block;font-size: 14px;font-weight: 700;line-height: 1.2;padding: 3px 10px;position: relative;"></input></div>';
 
     bookings.forEach(function(booking, i) {
       htmlBuffer +=
@@ -116,13 +117,12 @@
       htmlBuffer += '<div class="ready-time-gage" style="text-align: left"><hr style="border: 1px solid #fff;"><div><b>Pick Up</b><Br>' + booking.pickupAddress +
         '<br><Br><b>Drop Off</b><br>' + booking.dropOffAddress +
         '</div><br>' + '</div></div><br>';
-
     });
 
 
     htmlBuffer += "</div>";
-    console.log("END SPINNER");
     document.querySelector('#mobility-eta').innerHTML = htmlBuffer;
+
   }
 
   function setMarkers() {
@@ -171,7 +171,7 @@
 
 
   function showSpinner() {
-    var spinner = '<style>@-webkit-keyframes sweep { to { -webkit-transform: rotate(360deg); } }</style><div id="spinner" style="width: 50px; height: 50px; -webkit-animation: sweep 1s infinite linear; border-radius: 75px; border-bottom: 5px solid #00bbe5; margin: 50px auto"></div><div style="margin-top: 20px">Loading your trips...</div>'
+    var spinner = '<style>@-webkit-keyframes sweep { to { -webkit-transform: rotate(360deg); } }</style><div id="spinner" style="width: 50px; height: 50px; -webkit-animation: sweep 1s infinite linear; border-radius: 75px; border-bottom: 5px solid #00bbe5; margin: 50px auto"></div><div style="margin: 20px auto">Loading your trips...</div>'
     document.querySelector("#mobility-eta").innerHTML = spinner;
   }
 })();
