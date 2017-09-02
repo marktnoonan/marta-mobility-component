@@ -7,16 +7,11 @@
     orange: "#F79044"
   }
 
-  var statusColor;
-
   var martaResponse = {};
   var bookings = [];
   var clientName = "";
   var loginDetails = [];
 
-  //window.onload = init;
-
-  // moved init to an iife - waiting on big bg image to load was block execution.
   (function init() {
     addLogInScreen();
     addLogInListeners();
@@ -34,7 +29,6 @@
       }
     )
   }
-
 
   function addLogInScreen() {
     document.querySelector("#mobility-eta").innerHTML =
@@ -119,14 +113,12 @@
         '</div><br>' + '</div></div><br>';
     });
 
-
     htmlBuffer += "</div>";
     document.querySelector('#mobility-eta').innerHTML = htmlBuffer;
 
   }
 
   function setMarkers() {
-
     bookings.forEach(function(booking, i) {
       if (booking.status === "Scheduled") {
         setMarker(booking);
@@ -169,9 +161,8 @@
     });
   }
 
-
   function showSpinner() {
-    var spinner = '<style>@-webkit-keyframes sweep { to { -webkit-transform: rotate(360deg); } }</style><div id="spinner" style="width: 50px; height: 50px; -webkit-animation: sweep 1s infinite linear; border-radius: 75px; border-bottom: 5px solid #00bbe5; margin: 50px auto"></div><div style="margin: 20px auto">Loading your trips...</div>'
+    var spinner = '<style>@-webkit-keyframes sweep { to { -webkit-transform: rotate(360deg); } }</style><div id="spinner" style="width: 50px; height: 50px; -webkit-animation: sweep 1s infinite linear; border-radius: 75px; border-bottom: 5px solid #00bbe5; margin: 50px auto"></div><div style="margin: 20px auto; display: inline-block">Loading your trips...</div>'
     document.querySelector("#mobility-eta").innerHTML = spinner;
   }
 })();
