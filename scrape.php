@@ -1,6 +1,4 @@
 <?php
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
 
 // logging in with cURL based on http://thisinterestsme.com/php-login-to-website-with-curl/
 // this returns the DOM of the page it fetched as a string
@@ -22,13 +20,8 @@ if (isset($_POST['providedUsername']) && isset($_POST['providedPassword']) && $_
 exit("username or password is missing!");
 }
 
-//$bookingsTable = $html->find('td[valign=top]', 4)->find('table',2)->plaintext;
-
-
 $customerInfo = $html->find('div[class=portletContent even]', 0);
-
 $bookingIDs = $html->find('td[class=tripHeader]');
-
 
 
 /* adding the booking IDs inside a function lead to blank booking IDs...
@@ -286,22 +279,6 @@ function removePastBookings($arrayOfBookings)
         $booking["delayInMinutesDescription"] = getDelayInMinutesDescription($booking["delayInMinutes"]);
         $booking["statusDescription"] = getStatusDescription($booking["delayInMinutes"], $booking["status"]);
         $booking["statusColor"] = getStatusColor($booking["delayInMinutes"], $booking["status"]);
-
-
-
-        /*
-        loop through $arrayOfBookings and find ones where date is today, and if the ETA
-        is more than an hour old, remove the trip from the list.
-
-        (skipping this for now)
-         */
-        /*if ($booking["date"] === $currentDay && (($bookingEtaInMinutes + 60) < $currentTimeInMinutes)) {
-
-            array_shift($arrayOfBookings);
-
-        }*/
-
-
 
     }
     return $arrayOfBookings;

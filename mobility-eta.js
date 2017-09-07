@@ -22,9 +22,7 @@
     loginDetails = [username, password];
     getTrips(username, password).then(
       function() {
-        showTrips();
-        setMarkers();
-        addRefreshListener();
+        console.log("got trips");
       }
     )
   }
@@ -32,6 +30,11 @@
   function addLogInScreen() {
     document.querySelector("#mobility-eta").innerHTML =
       '<div class="form-wrapper" style="text-align:center; margin-top: 20px; margin-bottom: 40px;"><form class="" id="unpw-form" method="post"> <h1 style="margin-bottom: 40px;"> Log In </h1> <input type="text" name="providedUsername" value="" placeholder="Client ID" style="font-size:18px; padding: 3px"> <br><br> <input type="password" name="providedPassword" id="pw" value="" placeholder="Password" style="font-size:18px; padding: 3px"> <br><br><br> </form> <button type="button" id="login" style="background-color: #333; border: 2px solid #333; color: #fff; display: inline-block; font-size: 14px; font-weight: 700; line-height: 1.2; padding: 11px 20px; position: relative; cursor: pointer;">Check My Trips</button><div id="output"><br><span style="color:' + etaColors.red + '">WARNING: This is site is in a pilot mode. Some errors may still exist. If trip information is unclear or looks wrong, you may confirm with MARTA Mobility ETA by phone: 404-848-4212.</span><br><br> If you do not know your Client ID or Password, you can call Reservations at (404) 848-5826.<br><br> For a demo, enter username <b>test</b> and password <b>test</b>. Contact markthomasnoonan@gmail.com with questions or feedback. </div></div> </div>'
+  }
+
+  function addTryAgainScreen() {
+    document.querySelector("#mobility-eta").innerHTML =
+      '<div class="form-wrapper" style="text-align:center; margin-top: 20px; margin-bottom: 40px;"><form class="" id="unpw-form" method="post"> <h1 style="margin-bottom: 40px;"> Log In </h1> <p style="color:' + etaColors.red + '">Username or Password was not found, please try again:</p><input type="text" name="providedUsername" value="" placeholder="Client ID" style="font-size:18px; padding: 3px"> <br><br> <input type="password" name="providedPassword" id="pw" value="" placeholder="Password" style="font-size:18px; padding: 3px"> <br><br><br> </form> <button type="button" id="login" style="background-color: #333; border: 2px solid #333; color: #fff; display: inline-block; font-size: 14px; font-weight: 700; line-height: 1.2; padding: 11px 20px; position: relative; cursor: pointer;">Check My Trips</button><div id="output"><br><span style="color:' + etaColors.red + '">WARNING: This is site is in a pilot mode. Some errors may still exist. If trip information is unclear or looks wrong, you may confirm with MARTA Mobility ETA by phone: 404-848-4212.</span><br><br> If you do not know your Client ID or Password, you can call Reservations at (404) 848-5826.<br><br> For a demo, enter username <b>test</b> and password <b>test</b>. Contact markthomasnoonan@gmail.com with questions or feedback. </div></div> </div>'
   }
 
   function addLogInListeners() {
@@ -79,11 +82,29 @@
   }
 
   function handleMartaData(xhrResponse) {
-    martaResponse = JSON.parse(xhrResponse);
-    bookings = martaResponse[0].bookings;
-    clientName = martaResponse[0].clientName;
-    checkedTime = martaResponse[0].updatedAt;
+    console.log(xhrResponse);
+    debugger;
+    var proceed = true;
+    try {
+      martaResponse = JSON.parse(xhrResponse);
+    } catch (err) {
+      console.log("error: " + err);
+      proceed = false;
+    }
+    if (proceed) {
+      debugger;
+      bookings = martaResponse[0].bookings;
+      clientName = martaResponse[0].clientName;
+      checkedTime = martaResponse[0].updatedAt;
+      showTrips();
+      setMarkers();
+      addRefreshListener();
+    } else {
+      addTryAgainScreen();
+      addLogInListeners();
+    }
   }
+
 
   function showTrips() {
     var htmlBuffer =
