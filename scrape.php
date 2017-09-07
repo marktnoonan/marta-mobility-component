@@ -50,17 +50,13 @@ foreach ($bookingIDs as $bookingID) {
 $datesAndTimes = $html->find('td[valign=middle]');
 $arrayOfBookings = datesAndTimes($arrayOfBookings, $datesAndTimes);
 
-// this locates the "Past Trip" status, which can tell us that the bus has registered that the client was picked up.
-if ($html->find('span[class=smallbold]', 0)->plaintext !== "") {
-    $pastTripInDom = true;
-}
 $locations = $html->find('td[width=5]');
 $arrayOfBookings = locations($arrayOfBookings, $locations);
 
 $arrayOfBookings = removePastBookings($arrayOfBookings);
 
 $json = [
-    (object) ['clientName' => strip_tags($customerInfo->plaintext), 'bookings' => $arrayOfBookings, 'updatedAt' => date('g:i A'), "Past trip found" => $pastTripInDom]
+    (object) ['clientName' => strip_tags($customerInfo->plaintext), 'bookings' => $arrayOfBookings, 'updatedAt' => date('g:i A')]
     ];
 header('Content-type:application/json');
 echo json_encode($json);
