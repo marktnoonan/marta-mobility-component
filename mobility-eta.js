@@ -83,7 +83,6 @@
 
   function handleMartaData(xhrResponse) {
     console.log(xhrResponse);
-    debugger;
     var proceed = true;
     try {
       martaResponse = JSON.parse(xhrResponse);
@@ -92,7 +91,6 @@
       proceed = false;
     }
     if (proceed) {
-      debugger;
       bookings = martaResponse[0].bookings;
       clientName = martaResponse[0].clientName;
       checkedTime = martaResponse[0].updatedAt;
