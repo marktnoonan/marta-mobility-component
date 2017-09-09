@@ -1,87 +1,20 @@
-Marta Mobility Component (# Project Title)
+# Marta Mobility Component
 
-<!-- One Paragraph of project description goes here -->
+A clear, mobile-friendly, view of upcoming trips and ETAs for MARTA Mobility customers. Design to be a lightweight addition to any other web page.
 
 ## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+Clone the repo, run a server that supports PHP, and load up MARTA.html. The two dependencies (Promise Polyfill and Simple HTML DOM) are included in this folder, so for now there is no installation or set up step.
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* [Vanilla JS](http://vanilla-js.com/) - to avoid adding more than necessary to MARTA's site, no framework/library is used for templating the content. It is just concatenated strings.
+* [Promise Polyfill](https://github.com/taylorhakes/promise-polyfill)
+* [Simple HTML DOM](https://github.com/sunra/php-simple-html-dom-parser) - For scraping trip data from MARTA's old site.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+We are still working out the details, but anything in this repo that is not specifically MARTA's work is intended to be Free Open Source Software and could be reused by any similar paratransit organization wishing to connect it to their data and web site. 
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+Much of this particular implementation was written by Mark Noonan, but it draws on converstations, research, code, and other contributions from many others, without whom it would be very different (or indeed, wouldn't exist). A partial list: Darshan Gulur Srinivasa, Erick Garcia, Jared Saussy, Danny Alexander, Joshua Thornton, Nerando Johnson, Brittani Smalls, Ann Vu, Zachary Williams, Paris Walters, Itzcoatl Salazar, Roberto Cervantes
