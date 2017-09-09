@@ -1,4 +1,4 @@
-# Marta Mobility Component
+# Marta Mobility ETA (Website component)
 
 A clear, mobile-friendly, view of upcoming trips and ETAs for MARTA Mobility customers. Design to be a lightweight addition to any other web page.
 
@@ -13,7 +13,7 @@ Clone the repo, run a server that supports PHP, and load up MARTA.html. The two 
 
 ## License
 
-We are still working out the details, but anything in this repo that is not specifically MARTA's work is intended to be Free Open Source Software and could be reused by any similar paratransit organization wishing to connect it to their data and web site. 
+We are still working out the details, but anything in this repo that is not specifically MARTA's work is intended to be Free Open Source Software and could be reused by any similar paratransit organization wishing to connect it to their data and website. 
 
 ## Acknowledgments
 
