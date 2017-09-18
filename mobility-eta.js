@@ -120,7 +120,7 @@ if (bookings.length) {
     htmlBuffer +=
       '<div class="booking plan-a-trip-box" style="box-shadow: 0 0 3px 2px rgba(200,200,200,0.7); border-radius: 4px; margin: 10px; padding: 0 10px 10px 8px; padding-bottom: 6px; width: 310px; text-align: center; display:inline-block;" id="booking' + i + '"> <div class="date-and-id" id="date-and-id"> <span class="display-date"><h2 style="border:0; margin-bottom: 4px; margin-top: 12px"><b>' +
       booking.displayDate + '</b></h2></span><span><b>Booking ID</b>: ' + booking.bookingID +
-      '</span> | <span><b>Ready Time</b>: ' + booking.displayReadyTime +
+      '</span> | <span><b>Ready Time</b>: ' + (booking.displayReadyTime || "none") +
       '</span></div><hr style="border: 1px solid #fff;"><div class="booking-status" style="margin-top: 8px; margin-bottom: 7px;"><span style="font-weight:bold; font-size: 16px;">Trip Status</span><br> <span class="late-status" style="color:' +
       etaColors[booking.statusColor] + '">' + booking.status + (booking.statusDescription || "") + '</span></div>' +
       '<div class="progress-wrapper' + i + '" style="display: none;font-size: 12px; "> <div class="labels" style="padding-top: 3px; text-align: left; line-height: 1.2; margin-left: -6px;"> <div class="label left" style="width: auto;text-align: left;display: inline-block;padding: 0;"> <span class="tool-tip" style="background-color: #fff;color: #000;border-radius: 3px;display: inline-block;padding: 3px;margin-bottom: -2px;"><b>Start Window</b><br>' +
