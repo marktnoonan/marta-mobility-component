@@ -1,5 +1,5 @@
 <?php
-
+ini_set('display_errors', 0);
 // logging in with cURL based on http://thisinterestsme.com/php-login-to-website-with-curl/
 // this returns the DOM of the page it fetched as a string
 // simple HTML DOM turns that string back into a tree that we can traverse with selectors.
