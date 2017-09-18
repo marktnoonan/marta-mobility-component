@@ -84,22 +84,30 @@
       if (!martaResponse[0].clientName) {
         throw new Error("no client found");
       }
+      if (!martaResponse[0].bookings) {
+        throw new Error("no bookings found");
+      }
     } catch (err) {
-      console.log("error: " + err);
-      proceed = false;
+      console.log(err.message);
+      if (err.message === "no client found"){
+        retryLogin();
+        proceed = false;
+      }
     }
     if (proceed) {
-      bookings = martaResponse[0].bookings;
+      bookings = martaResponse[0].bookings || [];
       clientName = martaResponse[0].clientName;
       checkedTime = martaResponse[0].updatedAt;
       showTrips();
       setMarkers();
       addRefreshListener();
-    } else {
+    }
+
+    function retryLogin() {
       addTryAgainScreen();
       addLogInListeners();
     }
-  }
+    }
 
 
   function showTrips() {
@@ -130,7 +138,7 @@ if (bookings.length) {
       '</div><br>' + '</div></div><br>';
   });
 } else {
-  htmlBuffer += "<span>No bookings found</span>";
+  htmlBuffer += '<div class="plan-a-trip-box" style="margin-top: 20px; padding-top: 10px; font-size: 16px;">No bookings found</div>';
 }
 
     htmlBuffer += "</div>";
